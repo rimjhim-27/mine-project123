@@ -3,13 +3,14 @@ import { MessageCircle, X } from 'lucide-react';
 
 const WhatsAppWidget: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const phoneNumber = '+919693631158'; // Updated WhatsApp number
+  const phoneNumber = '+917870810192'; // Updated WhatsApp number to match UPI
   
   const quickMessages = [
     'I want to book a test',
     'I need help with my report',
     'What are your service areas?',
-    'I have a question about pricing'
+    'I have a question about pricing',
+    'I need help with payment'
   ];
 
   const handleQuickMessage = (message: string) => {
@@ -80,6 +81,12 @@ const WhatsAppWidget: React.FC = () => {
             >
               Start New Chat
             </button>
+
+            {/* Contact Info */}
+            <div className="mt-3 text-center text-xs text-gray-500">
+              <p>📞 +917870810192</p>
+              <p>Available 24/7 for support</p>
+            </div>
           </div>
         )}
 

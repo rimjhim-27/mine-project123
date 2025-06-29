@@ -26,7 +26,7 @@ const ReportDownload: React.FC = () => {
   };
 
   const handleContactCall = () => {
-    window.open('tel:+919693631158', '_self');
+    window.open('tel:+917870810192', '_self');
   };
 
   const handleContactEmail = () => {
@@ -35,7 +35,7 @@ const ReportDownload: React.FC = () => {
 
   const handleContactWhatsApp = () => {
     const message = encodeURIComponent('Hi! I need help downloading my report. My User ID is: ' + userId);
-    window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
+    window.open(`https://wa.me/917870810192?text=${message}`, '_blank');
   };
 
   return (
@@ -135,7 +135,7 @@ const ReportDownload: React.FC = () => {
                     className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
                   >
                     <Phone className="w-4 h-4" />
-                    <span>Call: +919693631158</span>
+                    <span>Call: +917870810192</span>
                   </button>
                   
                   <button 

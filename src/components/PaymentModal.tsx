@@ -18,7 +18,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi'>('upi');
   const [cardDetails, setCardDetails] = useState({
     cardNumber: '',
     expiryDate: '',
@@ -102,9 +102,27 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
 
   const generateUPIQR = () => {
     if (!bookingData) return '';
-    // Generate UPI payment URL (this would be real in production)
-    const upiUrl = `upi://pay?pa=rimjhim58096@paytm&pn=The LABs&am=${bookingData.price}&cu=INR&tn=Lab Test Payment - ${bookingData.testName}`;
+    // Generate UPI payment URL with the provided number
+    const upiUrl = `upi://pay?pa=7870810192@phonepe&pn=Rimjhim Rani&am=${bookingData.price}&cu=INR&tn=Lab Test Payment - ${bookingData.testName}`;
     return upiUrl;
+  };
+
+  const handleUPIPayment = () => {
+    if (!bookingData) return;
+    
+    // Open UPI app with payment details
+    const upiUrl = generateUPIQR();
+    window.open(upiUrl, '_blank');
+    
+    // For demo purposes, simulate payment completion after 5 seconds
+    setTimeout(() => {
+      const mockPaymentId = `upi_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      setPaymentStatus('success');
+      setTimeout(() => {
+        onPaymentSuccess(mockPaymentId);
+        onClose();
+      }, 2000);
+    }, 5000);
   };
 
   if (!isOpen || !bookingData) return null;
@@ -178,17 +196,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               <h3 className="font-bold text-secondary-900 mb-4">Choose Payment Method</h3>
               <div className="grid grid-cols-2 gap-4">
                 <button
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-4 border-2 rounded-xl transition-all duration-200 ${
-                    paymentMethod === 'card'
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-secondary-300 hover:border-primary-300'
-                  }`}
-                >
-                  <CreditCard className="w-6 h-6 mx-auto mb-2 text-primary-600" />
-                  <span className="font-medium text-secondary-900">Card</span>
-                </button>
-                <button
                   onClick={() => setPaymentMethod('upi')}
                   className={`p-4 border-2 rounded-xl transition-all duration-200 ${
                     paymentMethod === 'upi'
@@ -199,6 +206,17 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                   <Smartphone className="w-6 h-6 mx-auto mb-2 text-primary-600" />
                   <span className="font-medium text-secondary-900">UPI</span>
                 </button>
+                <button
+                  onClick={() => setPaymentMethod('card')}
+                  className={`p-4 border-2 rounded-xl transition-all duration-200 ${
+                    paymentMethod === 'card'
+                      ? 'border-primary-500 bg-primary-50'
+                      : 'border-secondary-300 hover:border-primary-300'
+                  }`}
+                >
+                  <CreditCard className="w-6 h-6 mx-auto mb-2 text-primary-600" />
+                  <span className="font-medium text-secondary-900">Card</span>
+                </button>
               </div>
             </div>
 
@@ -208,6 +226,63 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 <Lock className="w-4 h-4 text-primary-600" />
                 <span>Your payment information is encrypted and secure</span>
               </div>
+
+              {paymentMethod === 'upi' && (
+                <>
+                  {/* PhonePe QR Code */}
+                  <div className="bg-secondary-50 p-6 rounded-lg text-center">
+                    <div className="flex items-center justify-center space-x-2 mb-4">
+                      <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">Pe</span>
+                      </div>
+                      <h4 className="font-bold text-secondary-900">PhonePe Payment</h4>
+                    </div>
+                    
+                    {/* QR Code Image */}
+                    <div className="bg-white p-4 rounded-lg shadow-md mx-auto mb-4 max-w-xs">
+                      <img
+                        src="/mine phonepay.jpg"
+                        alt="PhonePe QR Code"
+                        className="w-full h-auto rounded-lg"
+                      />
+                    </div>
+                    
+                    <p className="text-sm text-secondary-600 mb-4">
+                      Scan this QR code with PhonePe app to pay ₹{bookingData.price}
+                    </p>
+                    
+                    <div className="bg-purple-50 p-3 rounded-lg mb-4">
+                      <p className="text-sm font-semibold text-purple-800">Payment Details:</p>
+                      <p className="text-sm text-purple-700">UPI ID: 7870810192@phonepe</p>
+                      <p className="text-sm text-purple-700">Name: Rimjhim Rani</p>
+                      <p className="text-sm text-purple-700">Amount: ₹{bookingData.price}</p>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleUPIPayment}
+                      className="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition-colors duration-200 mb-3"
+                    >
+                      Pay with PhonePe App
+                    </button>
+                  </div>
+
+                  {/* Manual UPI ID Entry */}
+                  <div className="border-t pt-4">
+                    <h5 className="font-semibold text-secondary-900 mb-3">Or enter UPI ID manually:</h5>
+                    <input
+                      type="text"
+                      value={upiDetails.upiId}
+                      onChange={(e) => setUpiDetails(prev => ({ ...prev, upiId: e.target.value }))}
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="yourname@phonepe"
+                    />
+                    <p className="text-xs text-secondary-500 mt-2">
+                      You can also pay to: 7870810192@phonepe
+                    </p>
+                  </div>
+                </>
+              )}
 
               {paymentMethod === 'card' && (
                 <>
@@ -279,43 +354,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 </>
               )}
 
-              {paymentMethod === 'upi' && (
-                <>
-                  {/* UPI ID */}
-                  <div>
-                    <label className="block text-sm font-medium text-secondary-700 mb-2">
-                      UPI ID
-                    </label>
-                    <input
-                      type="text"
-                      value={upiDetails.upiId}
-                      onChange={(e) => setUpiDetails(prev => ({ ...prev, upiId: e.target.value }))}
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="yourname@paytm"
-                      required
-                    />
-                  </div>
-
-                  {/* QR Code Scanner */}
-                  <div className="bg-secondary-50 p-4 rounded-lg text-center">
-                    <QrCode className="w-12 h-12 mx-auto mb-3 text-primary-600" />
-                    <h4 className="font-semibold text-secondary-900 mb-2">Scan QR Code</h4>
-                    <p className="text-sm text-secondary-600 mb-4">
-                      Scan this QR code with any UPI app to pay ₹{bookingData.price}
-                    </p>
-                    <div className="w-32 h-32 bg-white border-2 border-secondary-300 rounded-lg mx-auto flex items-center justify-center">
-                      <div className="text-xs text-secondary-500 text-center">
-                        QR Code<br />
-                        (Demo)
-                      </div>
-                    </div>
-                    <p className="text-xs text-secondary-500 mt-2">
-                      UPI ID: rimjhim58096@paytm
-                    </p>
-                  </div>
-                </>
-              )}
-
               {/* Security Features */}
               <div className="bg-success-50 p-4 rounded-lg">
                 <div className="flex items-center space-x-2 mb-2">
@@ -331,23 +369,25 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isProcessing}
-                className="w-full py-4 bg-gradient-to-r from-primary-600 to-medical-600 text-white font-bold rounded-lg hover:from-primary-700 hover:to-medical-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                {isProcessing ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Processing Payment...</span>
-                  </>
-                ) : (
-                  <>
-                    <Lock className="w-5 h-5" />
-                    <span>Pay ₹{bookingData.price} via {paymentMethod === 'card' ? 'Card' : 'UPI'}</span>
-                  </>
-                )}
-              </button>
+              {paymentMethod === 'card' && (
+                <button
+                  type="submit"
+                  disabled={isProcessing}
+                  className="w-full py-4 bg-gradient-to-r from-primary-600 to-medical-600 text-white font-bold rounded-lg hover:from-primary-700 hover:to-medical-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2"
+                >
+                  {isProcessing ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Processing Payment...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Lock className="w-5 h-5" />
+                      <span>Pay ₹{bookingData.price} via Card</span>
+                    </>
+                  )}
+                </button>
+              )}
             </form>
           </>
         )}

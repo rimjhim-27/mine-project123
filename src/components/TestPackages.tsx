@@ -24,7 +24,7 @@ const TestPackages: React.FC = () => {
   };
 
   const handleContactCall = () => {
-    window.open('tel:+919693631158', '_self');
+    window.open('tel:+917870810192', '_self');
   };
 
   const handleContactEmail = () => {
@@ -33,7 +33,7 @@ const TestPackages: React.FC = () => {
 
   const handleContactWhatsApp = () => {
     const message = encodeURIComponent('Hi! I need a custom test package. Please help me.');
-    window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
+    window.open(`https://wa.me/917870810192?text=${message}`, '_blank');
   };
 
   if (loading) {
@@ -223,7 +223,7 @@ const TestPackages: React.FC = () => {
               </div>
               
               <div className="mt-4 text-sm text-secondary-600">
-                <p>📞 +919693631158 | 📧 rimjhim58096@gmail.com</p>
+                <p>📞 +917870810192 | 📧 rimjhim58096@gmail.com</p>
               </div>
             </div>
           </div>
