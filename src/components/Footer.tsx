@@ -3,8 +3,8 @@ import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Fla
 
 const Footer: React.FC = () => {
   const handleDirections = () => {
-    // Open Google Maps with Patna location
-    const address = encodeURIComponent('Patna, Bihar, India');
+    // Open Google Maps with specific Patna location
+    const address = encodeURIComponent('Medical District, Patna, Bihar 800001, India');
     window.open(`https://www.google.com/maps/search/${address}`, '_blank');
   };
 
@@ -13,6 +13,13 @@ const Footer: React.FC = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-medical-900/20"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary-600/10 to-transparent rounded-full blur-3xl"></div>
+      
+      {/* Brand Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-9xl font-bold text-white/5 transform rotate-12 select-none">
+          The LABs
+        </div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
@@ -30,8 +37,8 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-secondary-300 mb-6 leading-relaxed">
-              Leading pathology services at your doorstep. NABL-certified lab with 
-              accurate results and convenient home collection across major cities.
+              Leading pathology services at your doorstep in Patna. NABL-certified lab with 
+              accurate results and convenient home collection across all areas of Patna.
             </p>
             <div className="flex space-x-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (

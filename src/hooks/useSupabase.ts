@@ -61,40 +61,77 @@ const fallbackPackages = [
   }
 ];
 
+// Updated testimonials with Patna locations and Hindi reviews
 const fallbackTestimonials = [
   {
     id: '1',
-    name: 'Priya Sharma',
-    location: 'Mumbai',
+    name: 'प्रिया शर्मा',
+    location: 'कंकड़बाग, पटना',
     rating: 5,
-    comment: 'Excellent service! The home collection was very convenient and the staff was professional. Got my reports on time with detailed explanations.',
+    comment: 'बहुत ही बेहतरीन सेवा और रिपोर्ट समय पर मिली, धन्यवाद The LABs! घर पर सैंपल लेने की सुविधा बहुत अच्छी है।',
     approved: true,
     created_at: new Date().toISOString()
   },
   {
     id: '2',
-    name: 'Rajesh Kumar',
-    location: 'Delhi',
+    name: 'राजेश कुमार',
+    location: 'बोरिंग रोड, पटना',
     rating: 5,
-    comment: 'Very satisfied with the service. The phlebotomist was skilled and the entire process was smooth. Highly recommend for anyone looking for home collection.',
+    comment: 'Very satisfied with the service. The phlebotomist was skilled and professional. Home collection saved me a lot of time. Highly recommend The LABs!',
     approved: true,
     created_at: new Date().toISOString()
   },
   {
     id: '3',
-    name: 'Sneha Patel',
-    location: 'Bangalore',
+    name: 'स्नेहा पटेल',
+    location: 'राजेंद्र नगर, पटना',
     rating: 4,
-    comment: 'Good experience overall. The booking process was easy and the results were accurate. The home collection saved me a lot of time.',
+    comment: 'अच्छी सेवा मिली। रिपोर्ट सही समय पर मिल गई और सभी टेस्ट सही थे। The LABs की टीम बहुत प्रोफेशनल है।',
     approved: true,
     created_at: new Date().toISOString()
   },
   {
     id: '4',
-    name: 'Amit Singh',
-    location: 'Pune',
+    name: 'अमित सिंह',
+    location: 'पटना सिटी, पटना',
     rating: 5,
-    comment: 'Outstanding service! The team is very professional and the reports are comprehensive. The convenience of home collection is unmatched.',
+    comment: 'Outstanding service! घर बैठे टेस्ट हो गया और रिपोर्ट भी जल्दी मिल गई। The LABs का स्टाफ बहुत अच्छा है। धन्यवाद!',
+    approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '5',
+    name: 'सुनीता देवी',
+    location: 'गांधी मैदान, पटना',
+    rating: 5,
+    comment: 'बहुत अच्छा अनुभव रहा। समय पर आए और सभी टेस्ट सही तरीके से किए। The LABs को धन्यवाद!',
+    approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '6',
+    name: 'विकास झा',
+    location: 'दानापुर, पटना',
+    rating: 4,
+    comment: 'Good experience with The LABs. Professional staff and accurate reports. Home collection service is very convenient for busy people like me.',
+    approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '7',
+    name: 'रीता कुमारी',
+    location: 'पटना जंक्शन, पटना',
+    rating: 5,
+    comment: 'एकदम सही सेवा! रिपोर्ट बिल्कुल सही आई और डॉक्टर ने भी तारीफ की। The LABs को बहुत-बहुत धन्यवाद।',
+    approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '8',
+    name: 'मनोज कुमार',
+    location: 'फ्रेजर रोड, पटना',
+    rating: 5,
+    comment: 'Excellent service by The LABs team. Very professional and timely. The home collection facility is a game-changer for elderly patients like my mother.',
     approved: true,
     created_at: new Date().toISOString()
   }

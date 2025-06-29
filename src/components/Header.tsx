@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Download, FlaskConical } from 'lucide-react';
+import { Menu, X, Phone, Download, FlaskConical, MessageCircle } from 'lucide-react';
 import BookingModal from './BookingModal';
 
 const Header: React.FC = () => {
@@ -15,7 +15,27 @@ const Header: React.FC = () => {
   ];
 
   const handleBookTest = () => {
-    setIsBookingModalOpen(true);
+    // Show options for booking
+    const userChoice = window.confirm(
+      'Choose your booking method:\n\nOK - Browse Tests & Packages\nCancel - Call/WhatsApp for Assistance'
+    );
+    
+    if (userChoice) {
+      // Scroll to tests section
+      document.getElementById('tests')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Show contact options
+      const contactChoice = window.confirm(
+        'Contact us for booking assistance:\n\nOK - Call Now\nCancel - WhatsApp'
+      );
+      
+      if (contactChoice) {
+        window.open('tel:+919693631158', '_self');
+      } else {
+        const message = encodeURIComponent('Hi! I want to book a test. Please help me.');
+        window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
+      }
+    }
     setIsMenuOpen(false);
   };
 

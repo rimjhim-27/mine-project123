@@ -10,13 +10,13 @@ const TrustElements: React.FC = () => {
       id: '1',
       name: 'NABL Accredited',
       issuer: 'National Accreditation Board for Testing and Calibration Laboratories',
-      image: 'https://images.pexels.com/photos/3912572/pexels-photo-3912572.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop'
+      image: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop'
     },
     {
       id: '2',
       name: 'CAP Certified',
       issuer: 'College of American Pathologists',
-      image: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop'
+      image: 'https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop'
     },
     {
       id: '3',
@@ -27,24 +27,38 @@ const TrustElements: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {[
-            { icon: Users, number: '50,000+', label: 'Happy Patients' },
-            { icon: Shield, number: '99.9%', label: 'Accuracy Rate' },
-            { icon: Award, number: '15+', label: 'Years Experience' },
-            { icon: Star, number: '4.9/5', label: 'Customer Rating' }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <stat.icon className="w-8 h-8 text-primary-600" />
+    <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
+      {/* Brand Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-9xl font-bold text-primary-100/15 transform -rotate-12 select-none">
+          The LABs
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Simplified Stats Section */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-8 bg-white/80 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-lg">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                <Users className="w-6 h-6 text-primary-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div>
+                <div className="text-2xl font-bold text-primary-600">1000+</div>
+                <div className="text-sm text-secondary-600">Happy Patients</div>
+              </div>
             </div>
-          ))}
+            <div className="w-px h-12 bg-secondary-200"></div>
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center">
+                <Award className="w-6 h-6 text-success-600" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-success-600">5+</div>
+                <div className="text-sm text-secondary-600">Years of Experience</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Certifications */}
@@ -63,7 +77,7 @@ const TrustElements: React.FC = () => {
             {certifications.map((cert) => (
               <div
                 key={cert.id}
-                className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
                   <img
@@ -83,11 +97,11 @@ const TrustElements: React.FC = () => {
         <div>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              What Our Patients Say
+              What Our Patna Patients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Read genuine reviews from thousands of satisfied customers who chose 
-              our home collection services for their healthcare needs.
+              Read genuine reviews from our satisfied customers across Patna, 
+              from Kankarbagh to Boring Road and Rajendra Nagar.
             </p>
           </div>
 
@@ -106,7 +120,7 @@ const TrustElements: React.FC = () => {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Rating */}
                   <div className="flex items-center space-x-1 mb-4">
