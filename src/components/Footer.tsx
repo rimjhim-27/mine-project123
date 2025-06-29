@@ -116,8 +116,8 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 text-medical-400 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Email Support</p>
-                  <p className="text-secondary-300">rimjhim58096@gmail.com</p>
-                  <p className="text-secondary-300">Admin: rimjhim58096@gmail.com</p>
+                  <p className="text-secondary-300">support@thelabs.com</p>
+                  <p className="text-secondary-300">info@thelabs.com</p>
                 </div>
               </div>
               

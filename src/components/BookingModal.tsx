@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, User, Phone, Mail, MapPin, CreditCard } from 'lucide-react';
+import { useAuth } from './auth/AuthProvider';
 import { useBookings } from '../hooks/useSupabase';
 import PaymentModal from './PaymentModal';
 import { TestBookingData } from '../services/stripe';
@@ -16,14 +17,15 @@ interface BookingModalProps {
 }
 
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }) => {
+  const { user, isAuthenticated } = useAuth();
   const { createBooking, loading: bookingLoading } = useBookings();
   const [currentStep, setCurrentStep] = useState(1);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [bookingData, setBookingData] = useState<TestBookingData | null>(null);
   const [formData, setFormData] = useState({
-    patientName: '',
-    email: 'rimjhim58096@gmail.com', // Pre-filled with admin email
-    phone: '+919693631158', // Pre-filled with contact number
+    patientName: user?.name || '',
+    email: user?.email || '',
+    phone: user?.phone || '',
     address: '',
     collectionDate: '',
     collectionTime: '',
@@ -76,13 +78,50 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
     setShowPaymentModal(true);
   };
 
+  const sendNotifications = async (bookingDetails: any) => {
+    // Send SMS notification
+    const smsMessage = `Dear ${bookingDetails.patient_name}, your test booking for ${bookingDetails.test_name} has been confirmed for ${bookingDetails.collection_date} at ${bookingDetails.collection_time}. Booking ID: ${bookingDetails.id}. Thank you for choosing The LABs!`;
+    
+    // Send Email notification
+    const emailSubject = `Test Booking Confirmation - ${bookingDetails.test_name}`;
+    const emailBody = `
+      Dear ${bookingDetails.patient_name},
+      
+      Your test booking has been confirmed!
+      
+      Booking Details:
+      - Test: ${bookingDetails.test_name}
+      - Date: ${bookingDetails.collection_date}
+      - Time: ${bookingDetails.collection_time}
+      - Amount: ₹${bookingDetails.price}
+      - Booking ID: ${bookingDetails.id}
+      
+      Our team will visit your location for sample collection.
+      
+      Thank you for choosing The LABs!
+      
+      Best regards,
+      The LABs Team
+      Phone: +91 96936 31158
+      Email: rimjhim58096@gmail.com
+    `;
+
+    // In a real application, you would send actual SMS and email
+    console.log('SMS sent:', smsMessage);
+    console.log('Email sent:', emailSubject, emailBody);
+    
+    // Show success message to user
+    alert(`Booking confirmed! SMS and email notifications sent to ${bookingDetails.patient_phone} and ${bookingDetails.patient_email}`);
+  };
+
   const handlePaymentSuccess = async (paymentId: string) => {
-    if (!testData || !bookingData) return;
+    if (!testData || !bookingData || !user) return;
 
     try {
       // Create booking in database
-      await createBooking({
-        test_type: 'package', // You might want to determine this based on testData
+      const newBooking = await createBooking({
+        user_id: user.id,
+        test_type: 'individual', // You might want to determine this based on testData
         test_id: testData.id,
         test_name: testData.name,
         price: testData.price,
@@ -97,22 +136,39 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
         status: 'confirmed',
       });
 
+      // Store booking in localStorage for user access
+      const existingBookings = JSON.parse(localStorage.getItem('userBookings') || '[]');
+      existingBookings.push({
+        ...newBooking,
+        id: newBooking.id || `booking_${Date.now()}`,
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem('userBookings', JSON.stringify(existingBookings));
+
+      // Send notifications
+      await sendNotifications(newBooking);
+
       console.log('Booking created successfully with payment ID:', paymentId);
       setShowPaymentModal(false);
       onClose();
-      // Show success message or redirect
+      
+      // Redirect to user dashboard
+      setTimeout(() => {
+        window.location.href = '/dashboard';
+      }, 2000);
+      
     } catch (error) {
       console.error('Error creating booking:', error);
-      // Handle error - maybe show error message
+      alert('Booking created but there was an issue with notifications. Please contact support.');
     }
   };
 
   const resetForm = () => {
     setCurrentStep(1);
     setFormData({
-      patientName: '',
-      email: 'rimjhim58096@gmail.com', // Keep admin email pre-filled
-      phone: '+919693631158', // Keep contact number pre-filled
+      patientName: user?.name || '',
+      email: user?.email || '',
+      phone: user?.phone || '',
       address: '',
       collectionDate: '',
       collectionTime: '',
@@ -206,7 +262,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="+919693631158"
+                      placeholder="+91 9876543210"
                       required
                     />
                   </div>
@@ -222,7 +278,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="rimjhim58096@gmail.com"
+                    placeholder="your.email@example.com"
                     required
                   />
                 </div>

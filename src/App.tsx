@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './components/auth/AuthProvider';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedTests from './components/FeaturedTests';
@@ -11,6 +12,8 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import AdminPanel from './components/AdminPanel';
+import UserDashboard from './components/UserDashboard';
+import AuthGuard from './components/auth/AuthGuard';
 
 function HomePage() {
   return (
@@ -43,12 +46,22 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminPanel />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route 
+            path="/dashboard" 
+            element={
+              <AuthGuard>
+                <UserDashboard />
+              </AuthGuard>
+            } 
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
