@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedTests from './components/FeaturedTests';
@@ -9,8 +10,9 @@ import ReportDownload from './components/ReportDownload';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import AdminPanel from './components/AdminPanel';
 
-function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-white relative">
       {/* Global Brand Watermark */}
@@ -36,6 +38,17 @@ function App() {
         <WhatsAppWidget />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </Router>
   );
 }
 
