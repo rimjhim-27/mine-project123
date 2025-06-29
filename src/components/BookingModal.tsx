@@ -22,8 +22,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
   const [bookingData, setBookingData] = useState<TestBookingData | null>(null);
   const [formData, setFormData] = useState({
     patientName: '',
-    email: '',
-    phone: '',
+    email: 'rimjhim58096@gmail.com', // Pre-filled with admin email
+    phone: '+919693631158', // Pre-filled with contact number
     address: '',
     collectionDate: '',
     collectionTime: '',
@@ -111,8 +111,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
     setCurrentStep(1);
     setFormData({
       patientName: '',
-      email: '',
-      phone: '',
+      email: 'rimjhim58096@gmail.com', // Keep admin email pre-filled
+      phone: '+919693631158', // Keep contact number pre-filled
       address: '',
       collectionDate: '',
       collectionTime: '',
@@ -206,7 +206,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="+91 98765 43210"
+                      placeholder="+919693631158"
                       required
                     />
                   </div>
@@ -222,7 +222,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="patient@example.com"
+                    placeholder="rimjhim58096@gmail.com"
                     required
                   />
                 </div>

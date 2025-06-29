@@ -3,7 +3,7 @@ import { MessageCircle, X } from 'lucide-react';
 
 const WhatsAppWidget: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const phoneNumber = '+919876543210'; // Replace with actual WhatsApp number
+  const phoneNumber = '+919693631158'; // Updated WhatsApp number
   
   const quickMessages = [
     'I want to book a test',
@@ -47,7 +47,7 @@ const WhatsAppWidget: React.FC = () => {
                   <MessageCircle className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">MediHome Support</h3>
+                  <h3 className="font-semibold text-gray-900">The LABs Support</h3>
                   <p className="text-xs text-gray-600">Typically replies instantly</p>
                 </div>
               </div>

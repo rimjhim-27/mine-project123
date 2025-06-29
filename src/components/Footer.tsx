@@ -94,8 +94,8 @@ const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-primary-400 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Customer Care</p>
-                  <p className="text-secondary-300">1800-123-4567</p>
-                  <p className="text-secondary-300">+91 98765 43210</p>
+                  <p className="text-secondary-300">+919693631158</p>
+                  <p className="text-secondary-300">Emergency: +919693631158</p>
                 </div>
               </div>
               
@@ -103,8 +103,8 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 text-medical-400 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Email Support</p>
-                  <p className="text-secondary-300">support@thelabs.com</p>
-                  <p className="text-secondary-300">info@thelabs.com</p>
+                  <p className="text-secondary-300">rimjhim58096@gmail.com</p>
+                  <p className="text-secondary-300">Admin: rimjhim58096@gmail.com</p>
                 </div>
               </div>
               

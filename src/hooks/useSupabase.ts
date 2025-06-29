@@ -175,5 +175,11 @@ export function useBookings() {
     }
   };
 
-  return { createBooking, updateBooking, loading, error };
+  // Hook for admin access - check if user is admin
+  const checkAdminAccess = async (email: string) => {
+    const adminEmail = 'rimjhim58096@gmail.com';
+    return email === adminEmail;
+  };
+
+  return { createBooking, updateBooking, checkAdminAccess, loading, error };
 }

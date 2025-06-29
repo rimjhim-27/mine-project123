@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, User, Lock, FileText, CheckCircle } from 'lucide-react';
+import { Download, User, Lock, FileText, CheckCircle, Phone, Mail } from 'lucide-react';
 
 const ReportDownload: React.FC = () => {
   const [userId, setUserId] = useState('');
@@ -110,11 +110,21 @@ const ReportDownload: React.FC = () => {
                 alt="Secure report download"
                 className="rounded-2xl shadow-lg mx-auto mb-6"
               />
-              <div className="bg-white p-4 rounded-xl shadow-md">
-                <p className="text-sm text-gray-600 mb-2">
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <p className="text-sm text-gray-600 mb-4">
                   <strong>Can't find your User ID?</strong>
                 </p>
-                <button className="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2 text-sm text-gray-700">
+                    <Phone className="w-4 h-4 text-primary-600" />
+                    <span>Call: +919693631158</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-gray-700">
+                    <Mail className="w-4 h-4 text-primary-600" />
+                    <span>Email: rimjhim58096@gmail.com</span>
+                  </div>
+                </div>
+                <button className="mt-4 text-primary-600 hover:text-primary-700 font-medium text-sm">
                   Contact Support →
                 </button>
               </div>
