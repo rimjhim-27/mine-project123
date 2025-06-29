@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CreditCard, Lock, Shield, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, CreditCard, Lock, Shield, CheckCircle, AlertCircle, Smartphone, QrCode } from 'lucide-react';
 import { TestBookingData } from '../services/stripe';
 
 interface PaymentModalProps {
@@ -18,11 +18,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState<'idle' | 'processing' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi'>('card');
   const [cardDetails, setCardDetails] = useState({
     cardNumber: '',
     expiryDate: '',
     cvv: '',
     cardholderName: '',
+  });
+  const [upiDetails, setUpiDetails] = useState({
+    upiId: '',
   });
 
   useEffect(() => {
@@ -34,6 +38,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
         expiryDate: '',
         cvv: '',
         cardholderName: '',
+      });
+      setUpiDetails({
+        upiId: '',
       });
     }
   }, [isOpen]);
@@ -50,8 +57,8 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
       await new Promise(resolve => setTimeout(resolve, 3000));
       
       // In a real implementation, you would:
-      // 1. Create payment intent with Stripe
-      // 2. Confirm payment with card details
+      // 1. Create payment intent with Stripe/UPI gateway
+      // 2. Confirm payment with card/UPI details
       // 3. Handle the response
       
       const mockPaymentId = `pi_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -91,6 +98,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
       return v.substring(0, 2) + '/' + v.substring(2, 4);
     }
     return v;
+  };
+
+  const generateUPIQR = () => {
+    if (!bookingData) return '';
+    // Generate UPI payment URL (this would be real in production)
+    const upiUrl = `upi://pay?pa=rimjhim58096@paytm&pn=The LABs&am=${bookingData.price}&cu=INR&tn=Lab Test Payment - ${bookingData.testName}`;
+    return upiUrl;
   };
 
   if (!isOpen || !bookingData) return null;
@@ -159,6 +173,35 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               </div>
             </div>
 
+            {/* Payment Method Selection */}
+            <div className="p-6 border-b border-secondary-200">
+              <h3 className="font-bold text-secondary-900 mb-4">Choose Payment Method</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <button
+                  onClick={() => setPaymentMethod('card')}
+                  className={`p-4 border-2 rounded-xl transition-all duration-200 ${
+                    paymentMethod === 'card'
+                      ? 'border-primary-500 bg-primary-50'
+                      : 'border-secondary-300 hover:border-primary-300'
+                  }`}
+                >
+                  <CreditCard className="w-6 h-6 mx-auto mb-2 text-primary-600" />
+                  <span className="font-medium text-secondary-900">Card</span>
+                </button>
+                <button
+                  onClick={() => setPaymentMethod('upi')}
+                  className={`p-4 border-2 rounded-xl transition-all duration-200 ${
+                    paymentMethod === 'upi'
+                      ? 'border-primary-500 bg-primary-50'
+                      : 'border-secondary-300 hover:border-primary-300'
+                  }`}
+                >
+                  <Smartphone className="w-6 h-6 mx-auto mb-2 text-primary-600" />
+                  <span className="font-medium text-secondary-900">UPI</span>
+                </button>
+              </div>
+            </div>
+
             {/* Payment Form */}
             <form onSubmit={handlePayment} className="p-6 space-y-6">
               <div className="flex items-center space-x-2 text-sm text-secondary-600 bg-primary-50 p-3 rounded-lg">
@@ -166,71 +209,112 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 <span>Your payment information is encrypted and secure</span>
               </div>
 
-              {/* Cardholder Name */}
-              <div>
-                <label className="block text-sm font-medium text-secondary-700 mb-2">
-                  Cardholder Name
-                </label>
-                <input
-                  type="text"
-                  value={cardDetails.cardholderName}
-                  onChange={(e) => setCardDetails(prev => ({ ...prev, cardholderName: e.target.value }))}
-                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
+              {paymentMethod === 'card' && (
+                <>
+                  {/* Cardholder Name */}
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
+                      Cardholder Name
+                    </label>
+                    <input
+                      type="text"
+                      value={cardDetails.cardholderName}
+                      onChange={(e) => setCardDetails(prev => ({ ...prev, cardholderName: e.target.value }))}
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
 
-              {/* Card Number */}
-              <div>
-                <label className="block text-sm font-medium text-secondary-700 mb-2">
-                  Card Number
-                </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={cardDetails.cardNumber}
-                    onChange={(e) => setCardDetails(prev => ({ ...prev, cardNumber: formatCardNumber(e.target.value) }))}
-                    className="w-full px-4 py-3 pl-12 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="1234 5678 9012 3456"
-                    maxLength={19}
-                    required
-                  />
-                  <CreditCard className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
-                </div>
-              </div>
+                  {/* Card Number */}
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
+                      Card Number
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        value={cardDetails.cardNumber}
+                        onChange={(e) => setCardDetails(prev => ({ ...prev, cardNumber: formatCardNumber(e.target.value) }))}
+                        className="w-full px-4 py-3 pl-12 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        placeholder="1234 5678 9012 3456"
+                        maxLength={19}
+                        required
+                      />
+                      <CreditCard className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                    </div>
+                  </div>
 
-              {/* Expiry and CVV */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-2">
-                    Expiry Date
-                  </label>
-                  <input
-                    type="text"
-                    value={cardDetails.expiryDate}
-                    onChange={(e) => setCardDetails(prev => ({ ...prev, expiryDate: formatExpiryDate(e.target.value) }))}
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="MM/YY"
-                    maxLength={5}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-2">
-                    CVV
-                  </label>
-                  <input
-                    type="text"
-                    value={cardDetails.cvv}
-                    onChange={(e) => setCardDetails(prev => ({ ...prev, cvv: e.target.value.replace(/\D/g, '') }))}
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="123"
-                    maxLength={4}
-                    required
-                  />
-                </div>
-              </div>
+                  {/* Expiry and CVV */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
+                        Expiry Date
+                      </label>
+                      <input
+                        type="text"
+                        value={cardDetails.expiryDate}
+                        onChange={(e) => setCardDetails(prev => ({ ...prev, expiryDate: formatExpiryDate(e.target.value) }))}
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        placeholder="MM/YY"
+                        maxLength={5}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
+                        CVV
+                      </label>
+                      <input
+                        type="text"
+                        value={cardDetails.cvv}
+                        onChange={(e) => setCardDetails(prev => ({ ...prev, cvv: e.target.value.replace(/\D/g, '') }))}
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        placeholder="123"
+                        maxLength={4}
+                        required
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {paymentMethod === 'upi' && (
+                <>
+                  {/* UPI ID */}
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
+                      UPI ID
+                    </label>
+                    <input
+                      type="text"
+                      value={upiDetails.upiId}
+                      onChange={(e) => setUpiDetails(prev => ({ ...prev, upiId: e.target.value }))}
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="yourname@paytm"
+                      required
+                    />
+                  </div>
+
+                  {/* QR Code Scanner */}
+                  <div className="bg-secondary-50 p-4 rounded-lg text-center">
+                    <QrCode className="w-12 h-12 mx-auto mb-3 text-primary-600" />
+                    <h4 className="font-semibold text-secondary-900 mb-2">Scan QR Code</h4>
+                    <p className="text-sm text-secondary-600 mb-4">
+                      Scan this QR code with any UPI app to pay ₹{bookingData.price}
+                    </p>
+                    <div className="w-32 h-32 bg-white border-2 border-secondary-300 rounded-lg mx-auto flex items-center justify-center">
+                      <div className="text-xs text-secondary-500 text-center">
+                        QR Code<br />
+                        (Demo)
+                      </div>
+                    </div>
+                    <p className="text-xs text-secondary-500 mt-2">
+                      UPI ID: rimjhim58096@paytm
+                    </p>
+                  </div>
+                </>
+              )}
 
               {/* Security Features */}
               <div className="bg-success-50 p-4 rounded-lg">
@@ -242,6 +326,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                   <li>• 256-bit SSL encryption</li>
                   <li>• PCI DSS compliant</li>
                   <li>• No card details stored</li>
+                  <li>• UPI payments secured by NPCI</li>
                 </ul>
               </div>
 
@@ -259,7 +344,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 ) : (
                   <>
                     <Lock className="w-5 h-5" />
-                    <span>Pay ₹{bookingData.price}</span>
+                    <span>Pay ₹{bookingData.price} via {paymentMethod === 'card' ? 'Card' : 'UPI'}</span>
                   </>
                 )}
               </button>

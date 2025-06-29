@@ -1,7 +1,13 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, FlaskConical } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, FlaskConical, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const handleDirections = () => {
+    // Open Google Maps with Patna location
+    const address = encodeURIComponent('Patna, Bihar, India');
+    window.open(`https://www.google.com/maps/search/${address}`, '_blank');
+  };
+
   return (
     <footer className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -114,8 +120,16 @@ const Footer: React.FC = () => {
                   <p className="font-semibold text-white">Head Office</p>
                   <p className="text-secondary-300">
                     123 Healthcare Street,<br />
-                    Medical District, Mumbai - 400001
+                    Medical District, Patna - 800001<br />
+                    Bihar, India
                   </p>
+                  <button 
+                    onClick={handleDirections}
+                    className="flex items-center space-x-1 mt-2 text-primary-300 hover:text-primary-200 transition-colors duration-200"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span className="text-sm">Get Directions</span>
+                  </button>
                 </div>
               </div>
               
@@ -135,7 +149,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-secondary-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary-400 text-sm">
-              © 2024 The LABs. All rights reserved. | NABL Accredited Lab
+              © 2024 The LABs. All rights reserved. | NABL Accredited Lab | Patna, Bihar
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-secondary-400 hover:text-white text-sm transition-colors duration-200">

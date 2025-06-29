@@ -19,6 +19,12 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const handleDownloadReport = () => {
+    // Scroll to report download section
+    document.getElementById('reports')?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-primary-100">
@@ -53,7 +59,10 @@ const Header: React.FC = () => {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="flex items-center space-x-2 px-5 py-2.5 text-primary-600 border-2 border-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-200 font-medium">
+              <button 
+                onClick={handleDownloadReport}
+                className="flex items-center space-x-2 px-5 py-2.5 text-primary-600 border-2 border-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-200 font-medium"
+              >
                 <Download className="w-4 h-4" />
                 <span>Download Report</span>
               </button>
@@ -90,7 +99,10 @@ const Header: React.FC = () => {
                   </a>
                 ))}
                 <div className="flex flex-col space-y-3 pt-4">
-                  <button className="flex items-center justify-center space-x-2 px-5 py-3 text-primary-600 border-2 border-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-200 font-medium">
+                  <button 
+                    onClick={handleDownloadReport}
+                    className="flex items-center justify-center space-x-2 px-5 py-3 text-primary-600 border-2 border-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-200 font-medium"
+                  >
                     <Download className="w-4 h-4" />
                     <span>Download Report</span>
                   </button>

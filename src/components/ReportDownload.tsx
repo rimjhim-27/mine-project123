@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, User, Lock, FileText, CheckCircle, Phone, Mail } from 'lucide-react';
+import { Download, User, Lock, FileText, CheckCircle, Phone, Mail, MessageCircle } from 'lucide-react';
 
 const ReportDownload: React.FC = () => {
   const [userId, setUserId] = useState('');
@@ -25,8 +25,21 @@ const ReportDownload: React.FC = () => {
     }, 3000);
   };
 
+  const handleContactCall = () => {
+    window.open('tel:+919693631158', '_self');
+  };
+
+  const handleContactEmail = () => {
+    window.open('mailto:rimjhim58096@gmail.com?subject=Report Download Help', '_self');
+  };
+
+  const handleContactWhatsApp = () => {
+    const message = encodeURIComponent('Hi! I need help downloading my report. My User ID is: ' + userId);
+    window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section id="reports" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -103,7 +116,7 @@ const ReportDownload: React.FC = () => {
               </div>
             </div>
 
-            {/* Illustration */}
+            {/* Illustration and Support */}
             <div className="text-center">
               <img
                 src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
@@ -114,19 +127,33 @@ const ReportDownload: React.FC = () => {
                 <p className="text-sm text-gray-600 mb-4">
                   <strong>Can't find your User ID?</strong>
                 </p>
+                
+                {/* Contact Options */}
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-2 text-sm text-gray-700">
-                    <Phone className="w-4 h-4 text-primary-600" />
+                  <button 
+                    onClick={handleContactCall}
+                    className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                  >
+                    <Phone className="w-4 h-4" />
                     <span>Call: +919693631158</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-700">
-                    <Mail className="w-4 h-4 text-primary-600" />
+                  </button>
+                  
+                  <button 
+                    onClick={handleContactEmail}
+                    className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors duration-200"
+                  >
+                    <Mail className="w-4 h-4" />
                     <span>Email: rimjhim58096@gmail.com</span>
-                  </div>
+                  </button>
+                  
+                  <button 
+                    onClick={handleContactWhatsApp}
+                    className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>WhatsApp Support</span>
+                  </button>
                 </div>
-                <button className="mt-4 text-primary-600 hover:text-primary-700 font-medium text-sm">
-                  Contact Support →
-                </button>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import type { Database } from '../lib/supabase';
+import { comprehensiveTests } from '../data/comprehensiveTests';
 
 type Tables = Database['public']['Tables'];
 
@@ -54,74 +55,6 @@ const fallbackPackages = [
     tests: ['Complete Blood Count', 'Thyroid Profile', 'Vitamin D', 'Vitamin B12', 'Iron Studies', 'PAP Smear'],
     category: 'Women\'s Health',
     popular: false,
-    home_collection: true,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  }
-];
-
-const fallbackTests = [
-  {
-    id: '1',
-    name: 'Complete Blood Count (CBC)',
-    description: 'Comprehensive blood test that evaluates overall health and detects various disorders.',
-    price: 299,
-    category: 'Blood Test',
-    symptoms: ['Fatigue', 'Weakness', 'Fever', 'Bruising'],
-    preparation_required: false,
-    report_time: '6 hours',
-    home_collection: true,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: '2',
-    name: 'Lipid Profile',
-    description: 'Measures cholesterol levels and assesses cardiovascular risk.',
-    price: 399,
-    category: 'Cardiac',
-    symptoms: ['Chest pain', 'High blood pressure', 'Family history of heart disease'],
-    preparation_required: true,
-    report_time: '12 hours',
-    home_collection: true,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: '3',
-    name: 'HbA1c (Glycated Hemoglobin)',
-    description: 'Measures average blood sugar levels over the past 2-3 months.',
-    price: 499,
-    category: 'Diabetes',
-    symptoms: ['Excessive thirst', 'Frequent urination', 'Fatigue', 'Blurred vision'],
-    preparation_required: false,
-    report_time: '24 hours',
-    home_collection: true,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: '4',
-    name: 'Thyroid Profile (T3, T4, TSH)',
-    description: 'Evaluates thyroid gland function and metabolism.',
-    price: 599,
-    category: 'Hormonal',
-    symptoms: ['Weight changes', 'Fatigue', 'Hair loss', 'Mood changes'],
-    preparation_required: false,
-    report_time: '24 hours',
-    home_collection: true,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: '5',
-    name: 'Vitamin D Total',
-    description: 'Measures vitamin D levels for bone health assessment.',
-    price: 799,
-    category: 'Vitamins',
-    symptoms: ['Bone pain', 'Muscle weakness', 'Fatigue', 'Depression'],
-    preparation_required: false,
-    report_time: '48 hours',
     home_collection: true,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
@@ -261,7 +194,7 @@ export function useTestPackages() {
   return { packages, loading, error };
 }
 
-// Hook for fetching individual tests
+// Hook for fetching individual tests with comprehensive database
 export function useIndividualTests() {
   const [tests, setTests] = useState<Tables['individual_tests']['Row'][]>([]);
   const [loading, setLoading] = useState(true);
@@ -281,9 +214,31 @@ export function useIndividualTests() {
           .order('name');
 
         if (error) throw error;
-        setTests(data || []);
+        
+        // If database has limited tests, merge with comprehensive list
+        const dbTests = data || [];
+        const allTests = [...dbTests];
+        
+        // Add comprehensive tests that aren't in database
+        comprehensiveTests.forEach(compTest => {
+          if (!dbTests.find(dbTest => dbTest.id === compTest.id)) {
+            allTests.push({
+              ...compTest,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString()
+            });
+          }
+        });
+        
+        setTests(allTests);
       } catch (err) {
-        console.warn('Database not available, using fallback data:', err);
+        console.warn('Database not available, using comprehensive test data:', err);
+        // Use comprehensive test list as fallback
+        const fallbackTests = comprehensiveTests.map(test => ({
+          ...test,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        }));
         setTests(fallbackTests);
         setError(null);
       } finally {

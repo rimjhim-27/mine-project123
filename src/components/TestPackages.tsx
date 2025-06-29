@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Star, Clock, Home, Sparkles, Loader2 } from 'lucide-react';
+import { Check, Star, Clock, Home, Sparkles, Loader2, Phone, Mail, MessageCircle } from 'lucide-react';
 import { useTestPackages } from '../hooks/useSupabase';
 import BookingModal from './BookingModal';
 
@@ -21,6 +21,19 @@ const TestPackages: React.FC = () => {
       description: pkg.description,
     });
     setIsBookingModalOpen(true);
+  };
+
+  const handleContactCall = () => {
+    window.open('tel:+919693631158', '_self');
+  };
+
+  const handleContactEmail = () => {
+    window.open('mailto:rimjhim58096@gmail.com?subject=Custom Package Inquiry', '_self');
+  };
+
+  const handleContactWhatsApp = () => {
+    const message = encodeURIComponent('Hi! I need a custom test package. Please help me.');
+    window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
   };
 
   if (loading) {
@@ -181,9 +194,37 @@ const TestPackages: React.FC = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-secondary-200">
               <h3 className="text-2xl font-bold text-secondary-900 mb-4">Need a Custom Package?</h3>
               <p className="text-secondary-600 mb-6">Our medical experts can create a personalized test package based on your specific health needs.</p>
-              <button className="px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Contact for Custom Package
-              </button>
+              
+              {/* Contact Options */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button 
+                  onClick={handleContactCall}
+                  className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Call Now</span>
+                </button>
+                
+                <button 
+                  onClick={handleContactEmail}
+                  className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-medical-600 to-medical-700 text-white font-bold rounded-xl hover:from-medical-700 hover:to-medical-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Email Us</span>
+                </button>
+                
+                <button 
+                  onClick={handleContactWhatsApp}
+                  className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-bold rounded-xl hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
+                </button>
+              </div>
+              
+              <div className="mt-4 text-sm text-secondary-600">
+                <p>📞 +919693631158 | 📧 rimjhim58096@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>
