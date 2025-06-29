@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Clock, Home, Droplets, Heart, Brain, Bone, Eye, Lungs, Shield } from 'lucide-react';
+import { Search, Clock, Home, Droplets, Heart, Brain, Bone, Eye, Settings as Lungs, Shield } from 'lucide-react';
 import BookingModal from './BookingModal';
 
 const FeaturedTests: React.FC = () => {
