@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle, X, Phone, Mail } from 'lucide-react';
 
 const WhatsAppWidget: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const phoneNumber = '+917870810192'; // Updated WhatsApp number to match UPI
+  const phoneNumber = '+919693631158';
   
   const quickMessages = [
     'I want to book a test',
@@ -26,6 +26,14 @@ const WhatsAppWidget: React.FC = () => {
     setIsExpanded(false);
   };
 
+  const handleCall = () => {
+    window.open(`tel:${phoneNumber}`, '_self');
+  };
+
+  const handleEmail = () => {
+    window.open('mailto:support@thelabs.com', '_self');
+  };
+
   return (
     <>
       {/* Backdrop */}
@@ -37,8 +45,8 @@ const WhatsAppWidget: React.FC = () => {
       )}
 
       {/* Widget Container */}
-      <div className="fixed bottom-6 right-6 z-50">
-        {/* Expanded Chat Menu */}
+      <div className="fixed bottom-6 left-6 z-50">
+        {/* Expanded Contact Menu */}
         {isExpanded && (
           <div className="mb-4 bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 w-80 animate-slide-up">
             {/* Header */}
@@ -49,7 +57,7 @@ const WhatsAppWidget: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">The LABs Support</h3>
-                  <p className="text-xs text-gray-600">Typically replies instantly</p>
+                  <p className="text-xs text-gray-600">Choose your preferred contact method</p>
                 </div>
               </div>
               <button
@@ -60,37 +68,73 @@ const WhatsAppWidget: React.FC = () => {
               </button>
             </div>
 
-            {/* Quick Messages */}
-            <div className="space-y-2 mb-4">
-              <p className="text-sm font-medium text-gray-700 mb-2">Quick messages:</p>
-              {quickMessages.map((message, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleQuickMessage(message)}
-                  className="w-full text-left p-3 text-sm bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                >
-                  {message}
-                </button>
-              ))}
+            {/* Contact Methods */}
+            <div className="space-y-3 mb-4">
+              <button
+                onClick={handleDirectChat}
+                className="w-full flex items-center space-x-3 p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors duration-200"
+              >
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  <MessageCircle className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">WhatsApp Chat</p>
+                  <p className="text-xs text-gray-600">Instant messaging support</p>
+                </div>
+              </button>
+
+              <button
+                onClick={handleCall}
+                className="w-full flex items-center space-x-3 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors duration-200"
+              >
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Call Now</p>
+                  <p className="text-xs text-gray-600">+91 96936 31158</p>
+                </div>
+              </button>
+
+              <button
+                onClick={handleEmail}
+                className="w-full flex items-center space-x-3 p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors duration-200"
+              >
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Email Support</p>
+                  <p className="text-xs text-gray-600">support@thelabs.com</p>
+                </div>
+              </button>
             </div>
 
-            {/* Direct Chat Button */}
-            <button
-              onClick={handleDirectChat}
-              className="w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition-colors duration-200"
-            >
-              Start New Chat
-            </button>
+            {/* Quick Messages for WhatsApp */}
+            <div className="border-t pt-3">
+              <p className="text-sm font-medium text-gray-700 mb-2">Quick WhatsApp messages:</p>
+              <div className="space-y-1">
+                {quickMessages.map((message, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleQuickMessage(message)}
+                    className="w-full text-left p-2 text-sm bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                  >
+                    {message}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {/* Contact Info */}
-            <div className="mt-3 text-center text-xs text-gray-500">
-              <p>📞 +917870810192</p>
+            <div className="mt-3 text-center text-xs text-gray-500 border-t pt-3">
+              <p>📞 +91 96936 31158 | 📧 support@thelabs.com</p>
               <p>Available 24/7 for support</p>
             </div>
           </div>
         )}
 
-        {/* Main WhatsApp Button */}
+        {/* Main Contact Button */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className={`w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center ${

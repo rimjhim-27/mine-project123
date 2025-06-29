@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ChevronDown, ChevronUp, Search, Loader2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, Loader2, Phone, Mail, MessageCircle } from 'lucide-react';
 import { useFAQs } from '../hooks/useSupabase';
 
 const FAQ: React.FC = () => {
@@ -30,6 +30,19 @@ const FAQ: React.FC = () => {
       newOpenItems.add(id);
     }
     setOpenItems(newOpenItems);
+  };
+
+  const handleContactCall = () => {
+    window.open('tel:+919693631158', '_self');
+  };
+
+  const handleContactEmail = () => {
+    window.open('mailto:support@thelabs.com?subject=Support Request', '_self');
+  };
+
+  const handleContactWhatsApp = () => {
+    const message = encodeURIComponent('Hi! I have a question about your services. Please help me.');
+    window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
   };
 
   if (loading) {
@@ -158,12 +171,31 @@ const FAQ: React.FC = () => {
             Our support team is here to help you with any queries about our services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200">
-              Contact Support
+            <button 
+              onClick={handleContactCall}
+              className="flex items-center justify-center space-x-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Call Support</span>
             </button>
-            <button className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors duration-200">
-              Live Chat
+            <button 
+              onClick={handleContactEmail}
+              className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors duration-200"
+            >
+              <Mail className="w-5 h-5" />
+              <span>Email Support</span>
             </button>
+            <button 
+              onClick={handleContactWhatsApp}
+              className="flex items-center justify-center space-x-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-200"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
+            </button>
+          </div>
+          <div className="mt-4 text-sm text-gray-600">
+            <p>📞 +91 96936 31158 | 📧 support@thelabs.com</p>
+            <p>Available 24/7 for your support</p>
           </div>
         </div>
       </div>

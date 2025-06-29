@@ -11,6 +11,7 @@ import ReportDownload from './components/ReportDownload';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import LiveChatWidget from './components/LiveChatWidget';
 import AdminPanel from './components/AdminPanel';
 import UserDashboard from './components/UserDashboard';
 import AuthGuard from './components/auth/AuthGuard';
@@ -39,6 +40,7 @@ function HomePage() {
         <FAQ />
         <Footer />
         <WhatsAppWidget />
+        <LiveChatWidget />
       </div>
     </div>
   );
