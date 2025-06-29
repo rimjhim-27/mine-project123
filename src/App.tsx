@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import FeaturedTests from './components/FeaturedTests';
 import TestPackages from './components/TestPackages';
 import IndividualTests from './components/IndividualTests';
+import About from './components/About';
+import Contact from './components/Contact';
 import TrustElements from './components/TrustElements';
 import ReportDownload from './components/ReportDownload';
 import FAQ from './components/FAQ';
@@ -35,6 +37,8 @@ function HomePage() {
         <FeaturedTests />
         <TestPackages />
         <IndividualTests />
+        <About />
+        <Contact />
         <TrustElements />
         <ReportDownload />
         <FAQ />
