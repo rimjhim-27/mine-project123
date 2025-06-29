@@ -1,143 +1,174 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check, Star, Clock, Home, Sparkles } from 'lucide-react';
 import { testPackages } from '../data/mockData';
+import BookingModal from './BookingModal';
 
 const TestPackages: React.FC = () => {
+  const [selectedTest, setSelectedTest] = useState<{
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+  } | null>(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleBookTest = (pkg: any) => {
+    setSelectedTest({
+      id: pkg.id,
+      name: pkg.name,
+      price: pkg.price,
+      description: pkg.description,
+    });
+    setIsBookingModalOpen(true);
+  };
+
   return (
-    <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50 relative">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-radial from-medical-200/20 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-radial from-primary-200/20 to-transparent rounded-full blur-3xl"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary-100 px-4 py-2 rounded-full mb-4">
-            <Sparkles className="w-4 h-4 text-primary-600" />
-            <span className="text-primary-700 font-semibold text-sm">Popular Packages</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
-            Comprehensive Health
-            <span className="bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent block">
-              Test Packages
-            </span>
-          </h2>
-          <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Expertly curated health checkup packages designed by medical professionals. 
-            Save money with our bundled tests and get complete health insights.
-          </p>
-        </div>
-
-        {/* Package Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testPackages.map((pkg, index) => (
-            <div
-              key={pkg.id}
-              className={`relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform hover:-translate-y-2 ${
-                pkg.popular 
-                  ? 'border-gradient-to-r from-primary-500 to-medical-500 scale-105 lg:scale-110' 
-                  : 'border-secondary-200 hover:border-primary-300'
-              }`}
-            >
-              {/* Popular Badge */}
-              {pkg.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-primary-600 to-medical-600 text-white py-2 text-center">
-                  <div className="flex items-center justify-center space-x-1">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span className="font-bold text-sm">MOST POPULAR</span>
-                  </div>
-                </div>
-              )}
-
-              <div className={`p-8 ${pkg.popular ? 'pt-16' : ''}`}>
-                {/* Package Name */}
-                <h3 className="text-2xl font-bold text-secondary-900 mb-3">{pkg.name}</h3>
-                
-                {/* Package Description */}
-                <p className="text-secondary-600 mb-6 text-sm leading-relaxed">{pkg.description}</p>
-
-                {/* Pricing */}
-                <div className="mb-8">
-                  <div className="flex items-baseline space-x-3">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent">
-                      ₹{pkg.price}
-                    </span>
-                    {pkg.originalPrice && (
-                      <span className="text-xl text-secondary-400 line-through">₹{pkg.originalPrice}</span>
-                    )}
-                  </div>
-                  {pkg.originalPrice && (
-                    <div className="bg-success-100 text-success-700 text-sm font-bold px-3 py-1 rounded-full inline-block mt-2">
-                      Save ₹{pkg.originalPrice - pkg.price} ({Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% off)
-                    </div>
-                  )}
-                </div>
-
-                {/* Features */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3 text-sm">
-                    <div className="w-8 h-8 bg-gradient-to-br from-medical-500 to-medical-600 rounded-lg flex items-center justify-center">
-                      <Home className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-secondary-700 font-medium">Free home collection</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-sm">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-secondary-700 font-medium">Reports in 6-24 hours</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-sm">
-                    <div className="w-8 h-8 bg-gradient-to-br from-success-500 to-success-600 rounded-lg flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-secondary-700 font-medium">{pkg.tests.length} tests included</span>
-                  </div>
-                </div>
-
-                {/* Included Tests */}
-                <div className="mb-8">
-                  <h4 className="font-bold text-secondary-900 mb-3">Tests Included:</h4>
-                  <div className="space-y-2">
-                    {pkg.tests.slice(0, 3).map((test, testIndex) => (
-                      <div key={testIndex} className="flex items-center space-x-3 text-sm">
-                        <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-medical-500 rounded-full"></div>
-                        <span className="text-secondary-600">{test}</span>
-                      </div>
-                    ))}
-                    {pkg.tests.length > 3 && (
-                      <div className="text-sm text-primary-600 font-bold">
-                        +{pkg.tests.length - 3} more tests
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <button className={`w-full py-4 rounded-xl font-bold transition-all duration-200 transform hover:scale-105 ${
-                  pkg.popular
-                    ? 'bg-gradient-to-r from-primary-600 to-medical-600 text-white shadow-lg hover:shadow-xl'
-                    : 'bg-secondary-100 text-secondary-900 hover:bg-secondary-200'
-                }`}>
-                  Book Now
-                </button>
-              </div>
+    <>
+      <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50 relative">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-radial from-medical-200/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-radial from-primary-200/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-primary-100 px-4 py-2 rounded-full mb-4">
+              <Sparkles className="w-4 h-4 text-primary-600" />
+              <span className="text-primary-700 font-semibold text-sm">Popular Packages</span>
             </div>
-          ))}
-        </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
+              Comprehensive Health
+              <span className="bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent block">
+                Test Packages
+              </span>
+            </h2>
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+              Expertly curated health checkup packages designed by medical professionals. 
+              Save money with our bundled tests and get complete health insights.
+            </p>
+          </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-secondary-200">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-4">Need a Custom Package?</h3>
-            <p className="text-secondary-600 mb-6">Our medical experts can create a personalized test package based on your specific health needs.</p>
-            <button className="px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Contact for Custom Package
-            </button>
+          {/* Package Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {testPackages.map((pkg, index) => (
+              <div
+                key={pkg.id}
+                className={`relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform hover:-translate-y-2 ${
+                  pkg.popular 
+                    ? 'border-gradient-to-r from-primary-500 to-medical-500 scale-105 lg:scale-110' 
+                    : 'border-secondary-200 hover:border-primary-300'
+                }`}
+              >
+                {/* Popular Badge */}
+                {pkg.popular && (
+                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-primary-600 to-medical-600 text-white py-2 text-center">
+                    <div className="flex items-center justify-center space-x-1">
+                      <Star className="w-4 h-4 fill-current" />
+                      <span className="font-bold text-sm">MOST POPULAR</span>
+                    </div>
+                  </div>
+                )}
+
+                <div className={`p-8 ${pkg.popular ? 'pt-16' : ''}`}>
+                  {/* Package Name */}
+                  <h3 className="text-2xl font-bold text-secondary-900 mb-3">{pkg.name}</h3>
+                  
+                  {/* Package Description */}
+                  <p className="text-secondary-600 mb-6 text-sm leading-relaxed">{pkg.description}</p>
+
+                  {/* Pricing */}
+                  <div className="mb-8">
+                    <div className="flex items-baseline space-x-3">
+                      <span className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent">
+                        ₹{pkg.price}
+                      </span>
+                      {pkg.originalPrice && (
+                        <span className="text-xl text-secondary-400 line-through">₹{pkg.originalPrice}</span>
+                      )}
+                    </div>
+                    {pkg.originalPrice && (
+                      <div className="bg-success-100 text-success-700 text-sm font-bold px-3 py-1 rounded-full inline-block mt-2">
+                        Save ₹{pkg.originalPrice - pkg.price} ({Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% off)
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center space-x-3 text-sm">
+                      <div className="w-8 h-8 bg-gradient-to-br from-medical-500 to-medical-600 rounded-lg flex items-center justify-center">
+                        <Home className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-secondary-700 font-medium">Free home collection</span>
+                    </div>
+                    <div className="flex items-center space-x-3 text-sm">
+                      <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
+                        <Clock className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-secondary-700 font-medium">Reports in 6-24 hours</span>
+                    </div>
+                    <div className="flex items-center space-x-3 text-sm">
+                      <div className="w-8 h-8 bg-gradient-to-br from-success-500 to-success-600 rounded-lg flex items-center justify-center">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-secondary-700 font-medium">{pkg.tests.length} tests included</span>
+                    </div>
+                  </div>
+
+                  {/* Included Tests */}
+                  <div className="mb-8">
+                    <h4 className="font-bold text-secondary-900 mb-3">Tests Included:</h4>
+                    <div className="space-y-2">
+                      {pkg.tests.slice(0, 3).map((test, testIndex) => (
+                        <div key={testIndex} className="flex items-center space-x-3 text-sm">
+                          <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-medical-500 rounded-full"></div>
+                          <span className="text-secondary-600">{test}</span>
+                        </div>
+                      ))}
+                      {pkg.tests.length > 3 && (
+                        <div className="text-sm text-primary-600 font-bold">
+                          +{pkg.tests.length - 3} more tests
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <button 
+                    onClick={() => handleBookTest(pkg)}
+                    className={`w-full py-4 rounded-xl font-bold transition-all duration-200 transform hover:scale-105 ${
+                      pkg.popular
+                        ? 'bg-gradient-to-r from-primary-600 to-medical-600 text-white shadow-lg hover:shadow-xl'
+                        : 'bg-secondary-100 text-secondary-900 hover:bg-secondary-200'
+                    }`}
+                  >
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-secondary-200">
+              <h3 className="text-2xl font-bold text-secondary-900 mb-4">Need a Custom Package?</h3>
+              <p className="text-secondary-600 mb-6">Our medical experts can create a personalized test package based on your specific health needs.</p>
+              <button className="px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Contact for Custom Package
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        testData={selectedTest}
+      />
+    </>
   );
 };
 
