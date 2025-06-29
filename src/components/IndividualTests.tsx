@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Clock, Home, AlertCircle } from 'lucide-react';
-import { individualTests } from '../data/mockData';
+import { Search, Filter, Clock, Home, AlertCircle, Loader2 } from 'lucide-react';
+import { useIndividualTests } from '../hooks/useSupabase';
 import BookingModal from './BookingModal';
 
 const IndividualTests: React.FC = () => {
+  const { tests, loading, error } = useIndividualTests();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedSymptom, setSelectedSymptom] = useState('All');
@@ -17,18 +18,18 @@ const IndividualTests: React.FC = () => {
 
   // Get unique categories and symptoms
   const categories = useMemo(() => {
-    const cats = ['All', ...Array.from(new Set(individualTests.map(test => test.category)))];
+    const cats = ['All', ...Array.from(new Set(tests.map(test => test.category)))];
     return cats;
-  }, []);
+  }, [tests]);
 
   const symptoms = useMemo(() => {
-    const symp = ['All', ...Array.from(new Set(individualTests.flatMap(test => test.symptoms)))];
+    const symp = ['All', ...Array.from(new Set(tests.flatMap(test => test.symptoms)))];
     return symp;
-  }, []);
+  }, [tests]);
 
   // Filter tests based on search and filters
   const filteredTests = useMemo(() => {
-    return individualTests.filter(test => {
+    return tests.filter(test => {
       const matchesSearch = test.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            test.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || test.category === selectedCategory;
@@ -36,7 +37,7 @@ const IndividualTests: React.FC = () => {
       
       return matchesSearch && matchesCategory && matchesSymptom;
     });
-  }, [searchTerm, selectedCategory, selectedSymptom]);
+  }, [tests, searchTerm, selectedCategory, selectedSymptom]);
 
   const handleBookTest = (test: any) => {
     setSelectedTest({
@@ -47,6 +48,32 @@ const IndividualTests: React.FC = () => {
     });
     setIsBookingModalOpen(true);
   };
+
+  if (loading) {
+    return (
+      <section id="tests" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
+            <span className="ml-2 text-lg text-secondary-600">Loading individual tests...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="tests" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-20">
+            <div className="text-red-600 mb-4">Error loading individual tests</div>
+            <p className="text-secondary-600">{error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
@@ -118,7 +145,7 @@ const IndividualTests: React.FC = () => {
 
             {/* Results Count */}
             <div className="mt-4 text-sm text-gray-600">
-              Showing {filteredTests.length} of {individualTests.length} tests
+              Showing {filteredTests.length} of {tests.length} tests
             </div>
           </div>
 
@@ -149,15 +176,15 @@ const IndividualTests: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 text-sm">
                     <Clock className="w-4 h-4 text-secondary-500" />
-                    <span className="text-gray-700">Report in {test.reportTime}</span>
+                    <span className="text-gray-700">Report in {test.report_time}</span>
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
                     <Home className="w-4 h-4 text-secondary-500" />
                     <span className="text-gray-700">
-                      {test.homeCollection ? 'Home collection available' : 'Lab visit required'}
+                      {test.home_collection ? 'Home collection available' : 'Lab visit required'}
                     </span>
                   </div>
-                  {test.preparationRequired && (
+                  {test.preparation_required && (
                     <div className="flex items-center space-x-2 text-sm">
                       <AlertCircle className="w-4 h-4 text-accent-500" />
                       <span className="text-gray-700">Preparation required</span>

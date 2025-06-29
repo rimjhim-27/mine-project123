@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, User, Phone, Mail, MapPin, CreditCard } from 'lucide-react';
+import { useBookings } from '../hooks/useSupabase';
 import PaymentModal from './PaymentModal';
 import { TestBookingData } from '../services/stripe';
 
@@ -15,6 +16,7 @@ interface BookingModalProps {
 }
 
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }) => {
+  const { createBooking, loading: bookingLoading } = useBookings();
   const [currentStep, setCurrentStep] = useState(1);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [bookingData, setBookingData] = useState<TestBookingData | null>(null);
@@ -74,15 +76,35 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
     setShowPaymentModal(true);
   };
 
-  const handlePaymentSuccess = (paymentId: string) => {
-    console.log('Payment successful:', paymentId);
-    // Here you would typically:
-    // 1. Save booking to database
-    // 2. Send confirmation email
-    // 3. Schedule home collection
-    setShowPaymentModal(false);
-    onClose();
-    // Show success message or redirect
+  const handlePaymentSuccess = async (paymentId: string) => {
+    if (!testData || !bookingData) return;
+
+    try {
+      // Create booking in database
+      await createBooking({
+        test_type: 'package', // You might want to determine this based on testData
+        test_id: testData.id,
+        test_name: testData.name,
+        price: testData.price,
+        patient_name: formData.patientName,
+        patient_email: formData.email,
+        patient_phone: formData.phone,
+        patient_address: formData.address,
+        collection_date: formData.collectionDate,
+        collection_time: formData.collectionTime,
+        payment_id: paymentId,
+        payment_status: 'completed',
+        status: 'confirmed',
+      });
+
+      console.log('Booking created successfully with payment ID:', paymentId);
+      setShowPaymentModal(false);
+      onClose();
+      // Show success message or redirect
+    } catch (error) {
+      console.error('Error creating booking:', error);
+      // Handle error - maybe show error message
+    }
   };
 
   const resetForm = () => {
@@ -339,10 +361,11 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, testData }
             ) : (
               <button
                 onClick={handleProceedToPayment}
-                className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-success-600 to-success-700 text-white font-semibold rounded-lg hover:from-success-700 hover:to-success-800 transition-all duration-200"
+                disabled={bookingLoading}
+                className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-success-600 to-success-700 text-white font-semibold rounded-lg hover:from-success-700 hover:to-success-800 disabled:opacity-50 transition-all duration-200"
               >
                 <CreditCard className="w-5 h-5" />
-                <span>Proceed to Payment</span>
+                <span>{bookingLoading ? 'Processing...' : 'Proceed to Payment'}</span>
               </button>
             )}
           </div>

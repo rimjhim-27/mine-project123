@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { ChevronDown, ChevronUp, Search } from 'lucide-react';
-import { faqs } from '../data/mockData';
+import { ChevronDown, ChevronUp, Search, Loader2 } from 'lucide-react';
+import { useFAQs } from '../hooks/useSupabase';
 
 const FAQ: React.FC = () => {
+  const { faqs, loading, error } = useFAQs();
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,7 +11,7 @@ const FAQ: React.FC = () => {
   const categories = useMemo(() => {
     const cats = ['All', ...Array.from(new Set(faqs.map(faq => faq.category)))];
     return cats;
-  }, []);
+  }, [faqs]);
 
   const filteredFAQs = useMemo(() => {
     return faqs.filter(faq => {
@@ -19,7 +20,7 @@ const FAQ: React.FC = () => {
                            faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchTerm]);
+  }, [faqs, selectedCategory, searchTerm]);
 
   const toggleItem = (id: string) => {
     const newOpenItems = new Set(openItems);
@@ -30,6 +31,32 @@ const FAQ: React.FC = () => {
     }
     setOpenItems(newOpenItems);
   };
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
+            <span className="ml-2 text-lg text-secondary-600">Loading FAQs...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-20">
+            <div className="text-red-600 mb-4">Error loading FAQs</div>
+            <p className="text-secondary-600">{error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-gray-50">

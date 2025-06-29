@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Check, Star, Clock, Home, Sparkles } from 'lucide-react';
-import { testPackages } from '../data/mockData';
+import { Check, Star, Clock, Home, Sparkles, Loader2 } from 'lucide-react';
+import { useTestPackages } from '../hooks/useSupabase';
 import BookingModal from './BookingModal';
 
 const TestPackages: React.FC = () => {
+  const { packages, loading, error } = useTestPackages();
   const [selectedTest, setSelectedTest] = useState<{
     id: string;
     name: string;
@@ -21,6 +22,32 @@ const TestPackages: React.FC = () => {
     });
     setIsBookingModalOpen(true);
   };
+
+  if (loading) {
+    return (
+      <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
+            <span className="ml-2 text-lg text-secondary-600">Loading test packages...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-20">
+            <div className="text-red-600 mb-4">Error loading test packages</div>
+            <p className="text-secondary-600">{error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
@@ -50,7 +77,7 @@ const TestPackages: React.FC = () => {
 
           {/* Package Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {testPackages.map((pkg, index) => (
+            {packages.map((pkg, index) => (
               <div
                 key={pkg.id}
                 className={`relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform hover:-translate-y-2 ${
@@ -82,13 +109,13 @@ const TestPackages: React.FC = () => {
                       <span className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent">
                         ₹{pkg.price}
                       </span>
-                      {pkg.originalPrice && (
-                        <span className="text-xl text-secondary-400 line-through">₹{pkg.originalPrice}</span>
+                      {pkg.original_price && (
+                        <span className="text-xl text-secondary-400 line-through">₹{pkg.original_price}</span>
                       )}
                     </div>
-                    {pkg.originalPrice && (
+                    {pkg.original_price && (
                       <div className="bg-success-100 text-success-700 text-sm font-bold px-3 py-1 rounded-full inline-block mt-2">
-                        Save ₹{pkg.originalPrice - pkg.price} ({Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% off)
+                        Save ₹{pkg.original_price - pkg.price} ({Math.round(((pkg.original_price - pkg.price) / pkg.original_price) * 100)}% off)
                       </div>
                     )}
                   </div>
