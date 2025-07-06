@@ -1,4 +1,4 @@
-# The LABs - Professional Home Collection Pathology Services
+# The LABs - Home Collection Pathology Service Provider
 
 A modern, responsive web application for pathology lab services with home collection booking system.
 

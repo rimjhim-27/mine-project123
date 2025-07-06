@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-300 to-medical-300 bg-clip-text text-transparent">
                   The LABs
                 </h3>
-                <p className="text-sm text-secondary-300">Professional Diagnostics</p>
+                <p className="text-sm text-secondary-300">Service Provider</p>
               </div>
             </div>
             <p className="text-secondary-300 mb-6 leading-relaxed">

@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-700 to-medical-700 bg-clip-text text-transparent">
                   The LABs
                 </h1>
-                <p className="text-xs text-secondary-600 font-medium">Professional Diagnostics</p>
+                <p className="text-xs text-secondary-600 font-medium">Service Provider</p>
               </div>
             </div>
 
