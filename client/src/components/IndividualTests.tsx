@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, Clock, Home, AlertCircle, Loader2 } from 'lucide-react';
-import { useIndividualTests } from '../hooks/useSupabase';
+import { useIndividualTests } from '../hooks/useApi';
 import BookingModal from './BookingModal';
 
 const IndividualTests: React.FC = () => {
-  const { tests, loading, error } = useIndividualTests();
+  const { individualTests, isLoading, error } = useIndividualTests();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedSymptom, setSelectedSymptom] = useState('All');

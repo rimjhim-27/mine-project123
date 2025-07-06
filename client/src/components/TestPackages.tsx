@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Check, Star, Clock, Home, Sparkles, Loader2, Phone, Mail, MessageCircle } from 'lucide-react';
-import { useTestPackages } from '../hooks/useSupabase';
+import { useTestPackages } from '../hooks/useApi';
 import BookingModal from './BookingModal';
 
 const TestPackages: React.FC = () => {
-  const { packages, loading, error } = useTestPackages();
+  const { testPackages, isLoading, error } = useTestPackages();
   const [selectedTest, setSelectedTest] = useState<{
     id: string;
     name: string;
@@ -36,7 +36,7 @@ const TestPackages: React.FC = () => {
     window.open(`https://wa.me/917870810192?text=${message}`, '_blank');
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +55,7 @@ const TestPackages: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-20">
             <div className="text-red-600 mb-4">Error loading test packages</div>
-            <p className="text-secondary-600">{error}</p>
+            <p className="text-secondary-600">{error?.message || 'An error occurred'}</p>
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@ const TestPackages: React.FC = () => {
 
           {/* Package Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {packages.map((pkg, index) => (
+            {testPackages.map((pkg: any, index: number) => (
               <div
                 key={pkg.id}
                 className={`relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform hover:-translate-y-2 ${
@@ -159,7 +159,7 @@ const TestPackages: React.FC = () => {
                   <div className="mb-8">
                     <h4 className="font-bold text-secondary-900 mb-3">Tests Included:</h4>
                     <div className="space-y-2">
-                      {pkg.tests.slice(0, 3).map((test, testIndex) => (
+                      {pkg.tests.slice(0, 3).map((test: string, testIndex: number) => (
                         <div key={testIndex} className="flex items-center space-x-3 text-sm">
                           <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-medical-500 rounded-full"></div>
                           <span className="text-secondary-600">{test}</span>

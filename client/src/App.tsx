@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'wouter';
 import { AuthProvider } from './components/auth/AuthProvider';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -54,18 +54,15 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route 
-            path="/dashboard" 
-            element={
-              <AuthGuard>
-                <UserDashboard />
-              </AuthGuard>
-            } 
-          />
-        </Routes>
+        <Switch>
+          <Route path="/" component={HomePage} />
+          <Route path="/admin" component={AdminPanel} />
+          <Route path="/dashboard">
+            <AuthGuard>
+              <UserDashboard />
+            </AuthGuard>
+          </Route>
+        </Switch>
       </Router>
     </AuthProvider>
   );
