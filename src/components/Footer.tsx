@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, FlaskConical, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const handleDirections = () => {
@@ -39,8 +39,12 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center shadow-lg">
-                <FlaskConical className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center">
+                <img
+                  src="/Screenshot (82).png"
+                  alt="The LABs Logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-300 to-medical-300 bg-clip-text text-transparent">

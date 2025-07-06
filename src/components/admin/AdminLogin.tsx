@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, Mail, Eye, EyeOff, FlaskConical } from 'lucide-react';
+import { Lock, Mail, Eye, EyeOff } from 'lucide-react';
 
 interface AdminLoginProps {
   onLogin: (email: string, password: string) => Promise<boolean>;
@@ -34,8 +34,12 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin }) => {
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FlaskConical className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <img
+              src="/Screenshot (82).png"
+              alt="The LABs Logo"
+              className="w-16 h-16 object-contain"
+            />
           </div>
           <h1 className="text-2xl font-bold text-secondary-900 mb-2">Admin Panel</h1>
           <p className="text-secondary-600">The LABs Management System</p>

@@ -9,7 +9,6 @@ import {
   FileText, 
   Settings,
   LogOut,
-  FlaskConical,
   TrendingUp,
   Calendar,
   DollarSign,
@@ -72,8 +71,12 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, adminEmail })
         {/* Header */}
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-medical-600 rounded-lg flex items-center justify-center">
-              <FlaskConical className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+              <img
+                src="/Screenshot (82).png"
+                alt="The LABs Logo"
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <div>
               <h1 className="text-lg font-bold text-secondary-900">The LABs</h1>

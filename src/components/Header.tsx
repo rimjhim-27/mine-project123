@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Download, FlaskConical, MessageCircle, User, LogOut } from 'lucide-react';
+import { Menu, X, Phone, Download, MessageCircle, User, LogOut } from 'lucide-react';
 import { useAuth } from './auth/AuthProvider';
 import AuthModal from './auth/AuthModal';
 import BookingModal from './BookingModal';
@@ -76,8 +76,12 @@ const Header: React.FC = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center shadow-lg">
-                <FlaskConical className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center">
+                <img
+                  src="/Screenshot (82).png"
+                  alt="The LABs Logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-700 to-medical-700 bg-clip-text text-transparent">
