@@ -28,11 +28,11 @@ const TrustElements: React.FC = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
-      {/* Brand Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="text-9xl font-bold text-primary-100/15 transform -rotate-12 select-none">
-          The LABs
-        </div>
+      {/* Subtle Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary-100/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary-100/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-primary-100/5 to-secondary-100/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
