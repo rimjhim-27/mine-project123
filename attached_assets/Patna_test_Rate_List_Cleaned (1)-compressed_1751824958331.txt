@@ -1,0 +1,852 @@
+﻿Labridge Patna Lab Address :-  Ground Floor, Loha Gali, Jakariyapur, Zero Mile, Patna - 800007
+
+Sr.No Test Name MRP SampleType
+1 1,25 - Dihydroxy Vitamin D 10500 Serum
+2 17-alpha Hydroxy Progesterone (17-OHP) 3420 Serum
+3 24 hours urine Protein/Creatinine Ratio 600 Urine
+4 25-Hydroxy Vitamin D 500 Serum
+5 Absolute Esonophil Count 300 EDTA
+6 Absolute Lymphocyte Count 300 EDTA
+7 Absolute Neutrophil Count 300 EDTA
+8 Acetylcholine receptor (AChR) antibody 4,000 Serum
+9 Acid Phosphatase (Total & Fraction) 500 Serum
+10 Acid Phosphatase Total 500 Serum
+
+Activated Partial Thromboplastin Time (APTT/PTTK)
+11 500 Citrate
+
+12 Adenosine Deaminase (ADA) Ascitic Fluid 800 Ascitic Fluid
+13 Adenosine Deaminase (ADA) CSF 800 CSF
+
+Pericardial Fluid
+14 Adenosine Deaminase (ADA) Pericardial Fluid 800
+
+15 Adenosine Deaminase (ADA) Peritoneal Fluid 800 Body Fluids
+16 Adenosine Deaminase (ADA) Pleural Fluid 800 Pleural Fluid
+17 Adenosine Deaminase (ADA) PUS 1,400 Pus
+18 Adenosine Deaminase (ADA) Serum 800 Serum
+19 Adenovirus Rapid Card 1,500 Stool
+20 Adiponectin Serum 9450 Serum
+21 Adreno Corticotrophic Hormone (ACTH) 1,600 Serum
+
+Serum,EDTA, 
+Plasma,Urine, 
+
+22 Advance ANC Profile 2200 Citrate
+23 AFB Culture (Bodyfluids) 1,800 Body Fluids
+24 AFB Culture (CSF) 1800 CSF
+25 AFB Culture (PUS) 1800 Pus
+26 AFB Culture (Sputum) 1800 Sputum
+27 AFB Culture (Tissue) 2,000 Tissue
+28 AFB Culture (Urine) 1800 Urine
+29 AFB FLUID 1500 Body Fluids
+30 AFB Stain (ZN Stain) 1 sample 400 Sputum
+31 AFB Stain (ZN Stain) 2 Sputum samples 400 Sputum
+32 AFB Stain (ZN Stain) 3 Sputum samples 400 Sputum
+33 AFB Stain Bal Fluid (ZN Stain) 400 Body Fluids
+34 AFB Stain CSF (ZN Stain) 450 CSF
+35 AFB Stain Pus, abscess and aspirates (ZN Stain) 450 Pus
+36 AFB Stain Urine (ZN Stain) 1 sample 400 Urine
+37 AFB Stain Urine (ZN Stain) 2 samples 400 Urine
+38 AFB Stain Urine (ZN Stain) 3 samples 400 Urine
+
+
+
+39 AFB-DNA (TB-PCR) Detection by Real Time PCR 2800 Body Fluids
+40 AFP-SERUM 800 Serum
+41 Alanine Transaminase (ALT/SGPT) 250 Serum
+42 Albert Stain (Diptheria Bacilli) 600 Throat Swab
+43 Albumin 150 Serum
+44 Albumin (Microprotein) 24 hr urine 250 Urine
+45 Albumin (Microprotein) CSF 270 CSF
+46 Albumin (Microprotein) urine Random 250 Urine
+47 Albumin Body Fluid 250 Body Fluids
+48 Alcohol (Ethonol ) Urine 3000 Urine
+49 Alcohol (Ethonol) Serum 2850 Serum
+50 Aldolase 3000 Serum
+51 Aldosterone Serum 6000 Serum
+52 Aldosterone Urine 1,900 Urine
+53 Alkaline Phosphatase (ALP) 250 Serum
+54 Alpha-1 Antitrypsin 3750 Serum
+55 Ammonia 1,000 Heparin
+56 Amphetamine (Qualitative) 1350 Urine
+57 Amylase Fluid 525 Body Fluids
+58 Amylase Serum 450 Serum
+59 Amylase Urine 600 Urine
+60 ANA Blot 2500 Serum
+
+Serum,EDTA, 
+61 ANC ADVANCE 2000 Plasma,Urine
+
+2 ml EDTA,2
+ml Plasma,2 ml 
+
+Serum,10 ml 
+62 ANC BASIC PROFILE 1500 Urine
+63 ANCA - Myeloperoxidase (p-ANCA) 1,000 Serum
+64 ANCA - Serine Proteinase 3 (c-ANCA) 2,400 Serum
+65 Androstenedione (A4) 4410 Serum
+66 Angiotensin Converting Enzyme (ACE) 1,400 CSF
+67 Angiotensin Converting Enzyme (ACE)-SERUM 1,400 Serum
+68 Anti A Titre Serum 5625 Serum
+69 Anti B Titre Serum 5625 Serum
+70 Anti Cyclic Citrullinated Peptide Antibody (CCP) 1700 Serum
+71 Anti ds-DNA Antibody 1,200 Serum
+72 Anti Jo-I antibody 4500 Serum
+73 Anti Mitochondrial Antibody ( AMA M2) 2775 Serum
+74 Anti Mullerian Hormone (AMH) 1,300 Serum
+75 Anti Nuclear Antibody IFA 1410 Serum
+76 Anti Nuclear Antibody(ANA) 2300 Serum
+77 Anti Phospholipid Antibody IgA 1350 Serum
+78 Anti Phospholipid Antibody IgG 1350 Serum
+79 Anti Phospholipid Antibody IgM 1350 Serum
+80 Anti Smooth Muscle Antibody 4410 Serum
+81 Anti SS-A (RO) Antibody 4650 Serum
+
+
+
+82 Anti SS-B (LA) Antibody 4650 Serum
+83 Anti Streptolysin (ASO) 600 Serum
+84 Anti streptolysin-0 ( ASO) Titre 1200 Serum
+85 Anti Thrombin III 5520 Plasma
+86 Anti Thyroglobulin Antibody (ATG) 2,000 Serum
+87 ANTI TPO ANTIBODY 1200 Serum
+88 APLA PROFILE 4800 Citrate,Serum
+89 Apolipoprotein A1 (APO-A1) 700 Serum
+
+Apolipoprotein A1,Apolipoprotein B (APO-B), Apolipoprotein 
+90 B/A1 Ratio (calculated) 1000 Serum
+
+91 Apolipoprotein B (APO-B) 1,400 Serum
+92 Aspartate Aminotransferase (AST/SGOT) 250 Serum
+93 ASPERGILLOSIS ANTIBODY IgE(FUMIGATUS) 2200 Serum
+94 ASPERGILLUS IgG AND IgM 4500 Serum
+
+Autoimmune encephalitis panel(Autoimmune encephalitis 
+95 panel) 24000 Serum
+
+BCR-ABL IS Transcript fusion Quantification by Real Time 
+96 PCR - Blood 7000 EDTA
+
+97 Bence Jones Protein (BJ Protein) 1920 Urine
+98 Benzodiazepines (Qualitative) 1350 Urine
+99 Beta 2 Microglobulin Serum 4500 Serum
+
+Beta Human Chorionic Gonodotropin Hormone (BHCG) - 
+100 FREE 1,050 Serum
+
+Beta Human Chorionic Gonodotropin Hormone (BHCG) - 
+101 SERUM 500 Serum
+
+Beta Human Chorionic Gonodotropin Hormone (BHCG) - 
+102 URINE 500 Urine
+
+103 Beta-2- Glycoprotein -1 IgA 1,200 Serum
+104 Beta-2- Glycoprotein -1 IgG 2700 Serum
+105 Beta-2- Glycoprotein -1 IgM 2700 Serum
+106 Bicarbonate (Calculated from CO2) 400 Serum
+107 Bile Acids-Total 2,100 Serum
+108 Bile Salts & Bile Pigments 200 Urine
+109 Bilirubin - Direct 300 Serum
+110 Bilirubin - Total 300 Serum
+111 Bilirubin (Total + Indirect + Direct) 400 Serum
+112 BLEEDING TIME AND CLOTTING TIME (BT, CT) 100 EDTA
+113 BLOOD C/S 1,050 Heparin
+114 Blood Culture, Aerobic 700 Whole Blood
+115 Blood Culture, Anaerobic 2000 Whole Blood
+
+Blood Grouping (A,B,O) and Rh factor Confirmation
+116 300 EDTA
+
+117 Blood Grouping (A,B,O) and Rh factor Screening 300 EDTA
+118 BLOOD PH LEVEL 220 EDTA
+119 Blood Picture - Peripheral Smear Examination 600 EDTA
+120 Blood Picture - Peripheral Smear Examination 600 EDTA
+121 Blood Urea Nitrogen (BUN) 240 Serum
+122 Bone marrow culture 9250 Tissue
+
+
+
+123 Bone marrow routien examination 5500 Tissue
+124 BRCA 1&2 17000 Serum
+125 Brucella IgG 3900 Serum
+126 Brucella IgM 3900 Serum
+127 C-Peptide 1,000 Serum
+128 C-Peptide Fasting 1,000 Serum
+129 C-Peptide Post Lunch 1,000 Serum
+130 C.Difficile Toxin A & B 7320 Stool
+131 CA-72.4 7500 Serum
+132 CA125 - Ovarian Cancer marker 1,000 Serum
+133 CA15.3 - Breast Cancer marker 1,500 Serum
+134 CA19.9 - Pancreatic Cancer Marker 1,600 Serum
+135 Cadmium Serum 8100 Serum
+136 Calcitonin 3,270 Serum
+137 Calcium - Spot Urine (Random) 150 Urine
+138 Calcium 24 hrs Urine 250 Urine
+139 Calcium Serum 150 Serum
+140 Calcium/Creatinine - Ratio 400 Urine
+141 Calprotectin Fecal 2,300 Stool
+142 Carbamazepine (Tegretol) 2010 Serum
+143 Carcino Embryonic Antigen (CEA) 600 Serum
+144 Cardiolipin IgA Antibody 1,500 Serum
+145 Cardiolipin IgG & IgM Antibody 3,000 Serum
+146 Cardiolipin IgG Antibody 1,500 Serum
+147 Cardiolipin IgM Antibody 1,500 Serum
+148 CBC + ESR 1,500 EDTA
+149 Ceruloplasmin 2,000 Serum
+150 Chikungunya IgG IgM Rapid 1500 Serum
+151 Chikungunya IgM ELISA 1950 Serum
+152 Chikungunya IgM Rapid Card 700 Serum
+153 Chikungunya Real Time PCR Qualitative 3500 EDTA
+154 Chlamydia Trachomatis-IgM 700 Serum
+155 Chloride - Serum 500 Serum
+156 Chloride - Urine Random 500 Urine
+157 Cholesterol - HDL 500 Serum
+158 Cholesterol - LDL Direct 500 Serum
+159 Cholesterol - Total 350 Serum
+160 Cholinesterase 1,000 Serum
+161 Cholylglycine (CG) 3600 Serum
+162 Chromogranin A 17400 Serum
+163 Chromosome analysis ( karyotyping) 9450 Heparin
+164 Citric Acid Urine 4300 Urine
+165 Cocaine Qualitative 1410 Urine
+166 Complement 3 (C3) 600 Serum
+167 Complement 4 (C4) 600 Serum
+168 Complete Blood Count (CBC) 500 EDTA
+
+
+
+Complete Blood Count (CBC) + Malarial Parasites Smear
+169 700 EDTA
+
+Complete Blood Count (CBC),Haemogram - 3PART
+170 500 EDTA
+
+171 COMPLETE VITAMIN PROFILE 7500 Serum
+172 Coombs Test - Direct 550 EDTA
+173 Coombs Test - Indirect 550 Serum
+174 Copper 2085 Serum
+175 Copper Urine 24 hrs 1000 Urine
+176 Cortisol 24hrs Urine 1800 Urine
+177 Cortisol Serum (3 to 5 PM) 900 Serum
+178 Cortisol Serum (7 to 9 AM) 900 Serum
+179 Cortisol Serum Random 900 Serum
+180 Cotinine ( Nicotine ) 1500 Serum
+181 Cotinine ( Nicotine ) 1500 Urine
+182 Covid Antibody IgG 900 Serum
+183 Covid Antibody IgM 1,200 Serum
+184 Covid IgG+IgM Total 2,000 Serum
+185 Creatine Kinase MB (CK-MB) Activity 800 Serum
+186 Creatinine 200 Serum
+187 Creatinine - Random Urine 200 Urine
+188 Creatinine 24 hrs Urine 250 Urine
+189 Creatinine Clearence Test 500 Serum, Urine
+190 Creatinine Kinase (CPK Total) 350 Serum
+191 Creatinine with GFR 350 Serum
+192 CRP Cardiac (hsCRP)Quantitative 800 Serum
+193 CRP Quantitative 1,000 Serum
+194 Cryoglobulin Estimation 1800 Serum
+195 Cryptocossus Antigen 4875 CSF
+196 Cryptosporidium detection 1200 Stool
+197 Culture Clot 1,100 Clot
+198 Culture Clot Automated 1,100 Other
+199 Culture CSF Automated 1,000 CSF
+200 Culture Water testing 1,100 Water
+201 Culture, Aerobic, Blood 1,100 Whole Blood
+202 Culture, Aerobic, Body Fluids 1,100 Body Fluids
+203 Culture, Aerobic, Body Fluids Automated 1,100 Body Fluids
+204 Culture, Aerobic, Cervical Swab 1,100 Cervical Swab
+205 Culture, Aerobic, Cervical Swab Automated 1,100 Swab
+206 Culture, Aerobic, CSF 1,100 CSF
+207 Culture, Aerobic, CSF Automated 1,100 CSF
+208 Culture, Aerobic, Ear Swab 1,100 Swab
+209 Culture, Aerobic, Ear Swab Automated 1,100 Swab
+210 Culture, Aerobic, Eye Swab 1,100 Swab
+211 Culture, Aerobic, Eye Swab Automated 1,100 Swab
+212 Culture, Aerobic, Miscellaneous 1,100 Other
+213 Culture, Aerobic, Miscellaneous Automated 1,100 Any Specimen
+
+
+
+214 Culture, Aerobic, Nasal Swab 1,100 Swab
+215 Culture, Aerobic, Nasal Swab Automated 1,100 Swab
+216 Culture, Aerobic, OT Swabs 1,100 Swab
+217 Culture, Aerobic, Pus 1,100 Pus
+218 Culture, Aerobic, Pus Automated 1,100 Pus
+219 Culture, Aerobic, Semen 1,100 Semen
+220 Culture, Aerobic, Semen Automated 1,100 Semen
+221 Culture, Aerobic, Sputum 1,100 Sputum
+222 Culture, Aerobic, Sputum Automated 1,100 Sputum
+223 Culture, Aerobic, Stool 1,100 Stool
+224 Culture, Aerobic, Stool Automated 1,100 Stool
+225 Culture, Aerobic, Throat Swab 1,100 Throat Swab
+226 Culture, Aerobic, Throat Swab Automated 1,100 Throat Swab
+227 Culture, Aerobic, Vaginal Swab 1,100 Swab
+228 Culture, Aerobic, Vaginal Swab Automated 1,100 Swab
+229 Cyclospora detection 1530 Stool
+230 CYFRA 21-1 3,605 Serum
+231 Cystatin C 3180 Serum
+
+Air Dried/ Fixed 
+232 Cytology -Fluids -Air Dried Smears 800 Slides
+233 Cytology -Fluids -Cystic Fluid 800 Body Fluids
+234 Cytology -Fluids -Lavage Fluid 800 Body Fluids
+235 Cytology -Fluids -Ovarian Cyst 800 Fixed Slides
+
+Pericardial Fluid
+236 Cytology -Fluids -Pericardial Fluid 800
+
+237 Cytology -Fluids -Peritoneal Fluid 800 Body Fluids
+238 Cytology -Fluids -Pleural Fluid 800 Pleural Fluid
+239 Cytology -Fluids -Synovial Fluid 800 Synovial Fluid
+240 Cytology -FNAC 800 Body Fluids
+241 Cytology -FNAC -PUS 800 Pus
+242 Cytology -FNAC Liquid Based Cytology (LBC) 1500 Body Fluids
+
+Air Dried/ Fixed 
+243 Cytology -PAP Smear 800 Slides
+
+Cytology -PAP Smear Liquid Based Cytology (LBC)
+244 2,200 Vaginal Swab
+
+245 Cytology- Ascitic Fluid 800 Ascitic Fluid
+246 Cytology- Other Fluids 800 Body Fluids
+247 Cytology-Bronchoalveolar Lavage (BAL) 800 Body Fluids
+248 Cytology-CSF 800 CSF
+249 Cytology-Drain Fluid 800 Body Fluids
+250 Cytology-Nipple Discharge 800 Body Fluids
+251 Cytology-Sputum 800 Sputum
+252 Cytology-Urine 800 Urine
+253 Cytomegalovirus IgG & IgM Antibody 900 Serum
+254 Cytomegalovirus IgG Antibody 450 CSF
+255 Cytomegalovirus IgG Antibody 450 Serum
+256 Cytomegalovirus IgM Antibody 450 CSF
+
+
+
+257 Cytomegalovirus IgM Antibody 450 Serum
+258 D-Dimer Quantitative 1,650 Citrate
+259 Dehydroepiandrosterone (DHEA) 2070 Serum
+260 Dehydroepiandrosterone Sulphate (DHEAS) 800 Serum
+261 Dengue Antigen (NS1) Antigen Quantitative 750 Serum
+
+Dengue Antigen (NS1) Antigen Rapid Card Qualitattive
+262 400 Serum
+
+263 Dengue Card IgG,IgM,NS1 1100 Serum
+264 DENGUE ELISA IgG,IgM,NS1 750 Serum
+265 Dengue IgG Quantitative 750 Serum
+266 Dengue IgG+IgM Antibody Quantitative 1,450 Serum
+267 Dengue IgG+IgM Antibody Rapid Card Qualitative 1,000 Serum
+268 Dengue IgM Quantitative 750 Serum
+269 Dengue NS1 Antigen by ELISA 650 Serum
+270 Di hydro testosterone (DHT) 3,200 Serum
+271 Differential Count (DC) 200 EDTA
+272 Digoxin 2325 Serum
+273 Dual Marker 2000 Serum
+274 Echinococcus antibody IgG 3500 Serum
+275 EDDP (methadone) 1320 Urine
+276 Electrolytes - Serum 550 Serum
+277 Electrolytes - Urine 550 Urine
+278 Endomysial Antibody-IgA by IF 2200 Serum
+279 Epstein Bar Virus IgG 2500 Serum
+280 Epstein Bar Virus IgM 5700 Serum
+281 Erythrocyte Count (RBC Count) 300 EDTA
+282 Erythrocyte Sedimentation Rate (ESR) 150 EDTA
+283 Erythropoietin (EPO) 1710 Serum
+284 Estradiol (E2) Estrogen 700 Serum
+285 Estriol, Unconjugated (E3) 900 Serum
+286 Factor V Clotting 5000 Plasma
+287 Factor V Leiden PCR Qualitative 6,150 EDTA
+288 Factor-II 4500 Plasma
+289 Factor-IX 4500 Plasma
+290 Factor-VII 4500 Plasma
+291 Factor-VIII 4500 Plasma
+292 Factor-X 4500 Plasma
+293 Factor-XI 4500 Plasma
+294 Factor-XII 4,500 Plasma
+295 Ferritin 990 Serum
+296 Fertility Profile Advance 2700 Serum
+297 Fertility Profile Basic 1400 Serum
+298 Fever 1 400 EDTA,Serum
+299 Fever 2 450 EDTA,Serum
+300 Fibrinogen 1,090 Citrate
+301 Fibrinogen Degradation Product (FDP) 2940 Plasma
+
+
+
+302 Fluid Cell Count 300 Body Fluids
+303 Fluid Examination - Routine 600 Body Fluids
+304 Fluid Examination - Routine 600 CSF
+305 Fluid Examination - Routine 600 Pleural Fluid
+306 Folate RBC 6000 Serum, EDTA
+307 Folic Acid 1290 Serum
+308 Folic Acid & RBC Folate 1,350 Serum, EDTA
+309 Follicle Stimulating Hormone (FSH) 560 Serum
+310 Free Androgen Index 6000 Serum
+311 Free Thyroid profile - Free TFT (ft3,ft4,tsh) 1,000 Serum
+312 Fructosamine 2850 Serum
+
+Urine / Swab / 
+Pus / Nail / Hair / 
+
+Sputum
+/ Body Fluids/ 
+
+CSF / Skin 
+scrappings
+
+313 Fungal Culture & Sensitivity 1,000
+314 Fungal Culture Body fluids 1,000 Body Fluids
+315 Fungal Culture CSF 1,000 CSF
+316 Fungal Culture Hair 1,000 Other
+317 Fungal Culture Nail 1,000 Other
+318 Fungal Culture PUS 1,000 Pus
+319 Fungal Culture Skin scrappings 1,000 Other
+320 Fungal Culture Sputum 1,000 Sputum
+321 Fungal Culture Swab 1,000 Swab
+322 Fungal Culture Urine 1,000 Urine
+
+Urine / Swab / 
+Pus / Nail / Hair / 
+
+Sputum
+/ Body Fluids/ 
+
+CSF / Skin 
+scrappings
+
+323 Fungal Stain 800
+324 GAD 65 Antibody 5625 Serum
+325 Gamma Glutamyl Transferase (GGT) 200 Serum
+326 Gastrin - Serum 4200 Serum
+327 Gene Xpert 4500 Any Specimen
+328 Gliadin Antibody IgA 1890 Serum
+329 Gliadin Antibody IgG 1890 Serum
+330 Glucose - Fasting 90 Plasma
+331 Glucose - PLBS 90 Plasma PP
+332 Glucose - Random 90 Plasma
+
+Glucose 6 Phosphate Dehydrogenase (G6PD Qualitative)
+333 800 EDTA
+
+Glucose 6 Phosphate Dehydrogenase (G6PD Quantitative)
+334 1,200 EDTA
+
+335 Glucose Challenge Test 100 Plasma
+336 Glucose Tolerance Test - 3 Sample 500 Plasma
+337 Glycosylated Hemoglobin (GHb/HBA1c) 620 EDTA
+
+
+
+338 Gram Stain - Ascitic Fluid 400 Ascitic Fluid
+339 Gram Stain - Body Fluids 400 Body Fluids
+
+Bronchial 
+340 Gram Stain - Bronchial Lavage 400 Lavage
+341 Gram Stain - CSF 400 CSF
+342 Gram Stain - Ear Swab 400 Swab
+343 Gram Stain - Eye Swab 400 Swab
+344 Gram Stain - Nasal Swab 400 Swab
+
+Pericardial Fluid
+345 Gram Stain - Pericardial Fluid 400
+
+346 Gram Stain - Peritoneal Fluid 400 Body Fluids
+347 Gram Stain - Pleural Fluid 400 Pleural Fluid
+348 Gram Stain - Pus 400 Pus
+349 Gram Stain - Synovial Fluid 400 Synovial Fluid
+350 Gram Stain - Throat Swab 400 Swab
+351 Gram Stain - Tissue 400 Tissue
+352 Gram Stain - Urine 400 Urine
+353 Gram Stain - Vaginal Swab 400 Swab
+354 Gram Stain Sputum 400 Sputum
+355 Gram Stain- Miscellaneous 400 Any Specimen
+356 Growth Hormone (HGH) 8046 Serum
+357 Hanta Virus Antibody IgM 6150 Serum
+358 Haptoglobin 5130 Serum
+359 Hb Electrophoresis by HPLC 2565 EDTA
+360 HBSAG QUANTITATIVE 1250 Serum
+361 HCV RNA PCR 3000 EDTA
+362 HE4 6300 Serum
+363 Helicobacter Pylori-IgA 1,200 Serum
+364 Helicobacter Pylori-IgG 1,200 Serum
+365 Helicobacter Pylori-IgG + IgM 2,000 Serum
+366 Helicobacter Pylori-IgM 1,200 Serum
+367 Hematocrit 300 EDTA
+368 Hematocrit Body Fluid 200 Body Fluids
+369 Hemoglobin 300 EDTA
+370 Hemoglobin A2 1000 EDTA
+371 Hepatitis A virus - (HAV IgG) 1,350 Serum
+372 Hepatitis A virus - IgM (HAV- IgM) 1,350 Serum
+373 Hepatitis B envelope Antibody (AntiHBe) 1260 Serum
+374 Hepatitis B Envelope Antigen (HBeAg) 1260 Serum
+375 Hepatitis B surface Antibody Total (Anti HBs) 1260 Serum
+376 Hepatitis B Surface antigen (HBsAg)-Rapid 200 Serum
+377 Hepatitis B Virus - Viral Load / Quantitative 1800 EDTA
+378 Hepatitis B Virus, Qualitative 2500 EDTA
+379 Hepatitis C Virus - Qualitative PCR 2500 EDTA
+380 Hepatitis C Virus - Viral Load / Quantitative 3500 EDTA
+381 Hepatitis C Virus ( HCV Antibody ) Quantitative 1000 Serum
+382 Hepatitis C Virus (HCV Antibody) 800 Serum
+
+
+
+383 Hepatitis C Virus (HCV Antibody)-Rapid 400 Serum
+384 Hepatitis Core Antibody IgM (Anti HBc - IgM) 800 Serum
+385 Hepatitis Core Antibody Total (HBcAb- Total) 800 Serum
+386 Hepatitis E virus - IgG (HEV IgG) 800 Serum
+387 Hepatitis E virus - IgM (HEV IgM) 800 Serum
+388 Herpes Simplex Virus 1 IgG 1,000 Serum
+389 Herpes Simplex Virus 1 IgG & IgM 2,000 Serum
+
+Herpes Simplex Virus 1 IgG & IgM, Herpes Simplex Virus 2 
+390 IgG & IgM 1200 Serum
+
+391 Herpes Simplex Virus 1 IgM 1,000 Serum
+392 Herpes Simplex Virus 2 IgG 1,000 Serum
+393 Herpes Simplex Virus 2 IgG & IgM 2,000 Serum
+394 Herpes Simplex Virus 2 IgM 1,000 Serum
+395 HHH Profile 900 Serum
+396 Histone 4800 Serum
+397 Histopathology Large 2,500 Tissue
+398 Histopathology Medium 1,800 Tissue
+399 Histopathology Small 1,200 Tissue
+400 HIV 1 & 2 Antibody -Rapid 500 Serum
+401 HIV 1 & 2 Antibody Elisa 500 Serum
+402 HIV 1 RNA PCR - Qualitative 2500 EDTA
+403 HIV 1- Quantitative (Viral Load) 3,500 EDTA
+
+HIV DUO P24 Antigen and Antibody to HIV 1 & 2 Serum
+404 1200 Serum
+
+405 HIV Western Blot 2300 Serum
+406 HLA B-27 Estimations 1,500 EDTA
+407 HLA-B27(flow)(HLA-B27(flow)) 1500 EDTA
+408 HLAB27 PCR Qualitative 2000 EDTA
+409 Homocysteine Serum 1,000 Serum
+410 HSV PCR 5000 CSF
+411 IGF 1 4680 Serum
+412 IGF BP -3 12150 Serum
+413 Immature Platelets Fraction (IPF) 900 EDTA
+414 Immunofixation Electrophoresis (Qualitative) 18780 Serum
+415 Immunoglobulin A (IgA) 900 Serum
+416 Immunoglobulin G (IgG) 900 Serum
+417 Immunoglobulin M (IgM) 900 Serum
+418 Influenza A- H1N1 (Swine flu), PCR 6,500 Swab
+419 Inhibin A 1,500 Serum
+420 Inhibin B 5700 Serum
+421 Insulin - Fasting 600 Serum
+422 Insulin - Post Prandial 600 Serum
+423 Intact Parathyroid Hormone (iPTH) 1,000 Serum
+424 InterLukin 6 (IL6) 4500 Serum
+425 Ionized Calcium 900 Serum
+426 Iron Profile 500 Serum
+427 Iron Serum 200 Serum
+
+
+
+428 Jak2-V617F & Exon12 20250 EDTA
+429 Japanese encephalitis (JE) 13125 Serum
+430 Karyotyping 9450 Tissue
+431 Ketone (Acetone,Hydroxybutyrate), serum 750 Serum
+432 Ketone (Acetone,Hydroxybutyrate),Urine 500 Urine
+433 KOH Preparation / Fungal Stain 800 Sputum
+434 KOH Preparation for Fungal Elements Body Fluids 800 Body Fluids
+435 KOH Preparation for Fungal Elements CSF 800 CSF
+436 KOH Preparation for Fungal Elements Hair 800 Hair
+
+KOH Preparation for Fungal Elements Miscellaneous
+437 800 Any Specimen
+
+438 KOH Preparation for Fungal Elements Nails 800 Nail
+KOH Preparation for Fungal Elements Skin Scrapp Skin scrappings
+
+439 800
+
+440 KOH Preparation for Fungal Elements Swabs 800 Swab
+441 KOH Preparation for Fungal Elements Urine 800 Urine
+442 Labridge 1 Special Package 2000 EDTA,Serum
+443 Labridge Allergy (Veg + inhalant drugs) 9500 Serum
+444 Labridge Allergy Comprehensive 8000 Serum
+445 Labridge Allergy Non - Veg Panel 4500 Serum
+
+Labridge Allergy Veg + Non - Veg + Inhalant Panel
+446 6200 Serum
+
+447 Labridge Allergy Veg + Non - Veg Panel 6000 Serum
+448 Labridge Allergy Veg Panel 4500 Serum
+
+Serum, EDTA, 
+Citrate, Urine, 
+
+449 Labridge ANC - 1 1500 Plasma
+450 Labridge Drugs Allergy 6500 Serum
+451 Labridge Fitness Care 4200 Serum,EDTA
+
+Serum,EDTA, 
+452 Labridge Full Body Basic 2000 Plasma
+
+Serum,EDTA, 
+453 Labridge Premium Health 2000 Plasma,Urine
+454 Labridge Wellness Plus 4200 Serum,EDTA
+455 Lactate 1000 Plasma
+456 Lactate Dehyderogenase (LDH) 400 CSF
+457 Lactate Dehyderogenase (LDH) 400 Serum
+458 Lactate Dehyderogenase (LDH) Ascitic Fluid 500 Ascitic Fluid
+459 Lactate Dehyderogenase (LDH) Pleural Fluid 500 Pleural Fluid
+460 Laminin 1800 Serum
+461 Lead ( Plumbum) Urine 5700 Urine
+462 Lead (Plumbum) 4395 EDTA
+463 Leptospira Antibody IgG 1000 Serum
+
+Leptospira Antibody IgG, Leptospira Antibody IgM Rapid 
+464 Card 1,500 Serum
+
+Leptospira Antibody IgG,Leptospira Antibody IgM 
+465 Quantitative 2,000 Serum
+
+
+
+Leptospira Antibody IgG,Leptospira Antibody IgM 
+466 Quantitative 2,000 Serum
+
+467 Leptospira Antibody IgM 850 Serum
+468 Leshmania Antibodies (KALA AZAR) 6000 Serum
+469 Lipase 500 Serum
+470 Lipid (Cholesterol) Profile (8 Tests) 800 Serum
+471 Lipoprotein a (Lp-a) 1,500 Serum
+472 Lithium (Li) 800 Serum
+473 Liver Profile (10 Tests) 1,200 Serum
+474 Liver Profile Extended (15 Tests) 1,500 Serum
+475 Liver Profile Mini 500 Serum
+476 Liver-Kidney Microsome (LKM) -1 Antibody 3750 Serum
+477 Lupus Anticoagulant (DRVVT) 1,200 Citrate
+478 Luteinising Hormone (LH) 300 Serum
+479 Magnesium 24 hrs Urine 250 Urine
+480 Magnesium Random Urine 200 Urine
+481 Magnesium Serum 200 Serum
+
+Malarial Falciparum and Vivax Antigen (Parasite V & F)
+482 350 EDTA
+
+483 Malarial Parasite slide 250 EDTA
+484 Mantoux Test 220 Any Specimen
+485 Marijuana (CANNABINOIDS) Qualitative 1350 Urine
+486 MCH-Mean Corpuscular Haemoglobin 300 EDTA
+487 Mean Platelet Volume 300 EDTA
+488 Measles IgG 2,000 Serum
+489 Measles IgM 2,000 Serum
+490 Methotrexate Determination 8400 Serum
+491 Microalbumin 400 Urine
+492 Microalbumin & Creatinine ratio 500 Urine
+493 Microalbumin 24 hrs Urine 500 Urine
+494 Microfilaria Antigen 1200 EDTA
+495 MICROFILARIA IgG, IgM 2500 EDTA
+496 Monkey pox virus PCR 5000 Swab
+497 Multiplex fever panel PCR 6500 EDTA
+498 Mumps IgG 7305 Serum
+499 Mumps IgM 5100 Serum
+500 Myoglobin Serum 1,600 Serum
+501 Myoglobin Urine 6900 Urine
+502 NMO-MOG Antibody(Cell based study)) 6800 Serum
+
+Non- Invasive Pre Natal Screening (NIPS) Trisomy 13, 18, 
+21, XO, XXY, XYY, Maternal 
+
+503 Microdeletions Blood
+9500
+
+504 Nt Pro BNP | Nt Pro B-type natriuretic peptide 2,500 Serum
+505 Opiates / Morphine Qualitative 500 Urine
+506 Parvovirus B19 IgG 3800 Serum
+507 Parvovirus B19 IgM 3800 Serum
+508 PCOD PROFILE 7 3500 EDTA,Serum
+
+
+
+509 Phenobarbitone, Gardinal 2400 Serum
+510 Phenytoin (Eptoin) 2400 Serum
+511 Phosphorus Serum 350 Serum
+512 Phosphorus Urine Random 350 Urine
+513 PLA2 receptor antibody Quantitative 5000 Serum
+514 Plasma Metanephrine 3500 EDTA
+515 Platelet Count 300 EDTA
+516 PML/RARA RG quantitative PCR 5000 EDTA
+517 Porphobilinogen (Qualitative)-Urine-Random 1500 Urine
+518 Potassium Random Urine 600 Urine
+519 Potassium Serum 600 Serum
+
+EDTA,Serum, 
+520 Pre Surgical Profile 2000 Plasma,Urine
+
+EDTA,Serum, 
+521 Pre Surgical Profile Advance 3000 Plasma,Urine
+
+EDTA,Serum, 
+522 Pre Surgical Profile basic 1900 Plasma,Urine
+523 Procalcitonin 1,500 Serum
+524 Progesterone 500 Serum
+525 Prolactin 350 Serum
+526 Prostate Specific Antigen (Free) 1,000 Serum
+527 Prostate Specific Antigen (Total) 700 Serum
+528 Protein (Microprotein) Random - Urinary 350 Urine
+529 Protein (Microprotein)- Fluids 500 Body Fluids
+530 Protein 24 hrs - Urinary (Microprotein) 500 Urine
+531 Protein C Activity 12300 Plasma
+532 Protein Electrophoresis 1470 Serum
+533 Protein S Activity 9900 Plasma
+534 Protein Total 150 Serum
+535 Protein Total with Albumin 180 Serum
+536 Protein(Microprotein)/Creatinine Ratio 200 Urine
+537 Prothrombin Time (PT) with INR 450 Citrate
+538 PTH (Parathyroid Hormone) 700 Serum
+539 PUS C/S Anaerobic 1750 Pus
+540 PUS Routine 500 Pus
+541 QUADRUPLE MARKER - SECOND TRIMESTER 3375 Serum
+542 Renal Profile Extended 400 Serum
+543 Renal Profile Mini (7 Tests) 350 Serum
+544 Renin Activity 10200 Plasma
+545 Reticulocyte Count 250 EDTA
+546 RH Antibody - Titre 700 Serum, EDTA
+547 Rheumatoid Factor (RA test) Quantitative 400 Serum
+548 Roma Score ( HE4 & CA125) 2500 Serum
+549 Rota virus / Adenovirus 1100 Stool
+550 Rotavirus 1000 Stool
+551 Rubella Quantitative PCR 2,500 EDTA
+552 Rubella Virus - IgG 700 Serum
+
+
+
+553 Rubella Virus - IgG,Rubella Virus - IgM 1,400 Serum
+554 Rubella Virus - IgM 700 Serum
+555 Salmonella Typhi IgG Rapid Card 400 Serum
+
+Salmonella Typhi IgM (TYPHI DOT IgG & IgM) Rapid Card
+556 700 Serum
+
+557 Salmonella Typhi IgM (TYPHI DOT IgM) 400 Serum
+558 SCL 70 Antibody 4650 Serum
+559 Scrub Typhus IgM IgG Antibody 1100 Serum
+
+Serum, Ascitic 
+560 Serum Ascites Albumin Gradient (SAAG) 700 Fluid
+561 Sex Hormone Binding Globulin (SHBG) 1,200 Serum
+562 Sickling test 900 EDTA
+563 Sm/RNP Antibody 5100 Serum
+564 Sodium 24hrs Urine 600 Urine
+565 Sodium Random Urine 600 Urine
+566 Sodium Serum 600 Serum
+567 SPOT urine Protein/Creatinine Ratio 170 urine
+568 SPUTUM AFB 1,000 Sputum
+569 SPUTUM C/S 700 Sputum
+570 Sputum Routine 700 Sputum
+571 Stone Analysis Gall bladder 1800 Stone
+572 Stone Analysis Kidney 1800 Stone
+573 STOOL C/S 700 stool
+574 Stool Examination 350 Stool
+
+STOOL EXAMINATION FOR REDUCING SUBSTANCES
+575 400 Stool
+
+576 STOOL FOR FUNGAL ELEMENT 400 Stool
+577 Stool for Hanging Drop 500 Stool
+578 Stool for Occult Blood 200 Stool
+579 Syphilis Antibodies (VDRL Test) Card Test 200 Serum
+580 Tacrolimus 8535 EDTA
+
+TB Gold Plus Gama Interferon (IGRA)WHO approved 4 
+581 Tube assay 2200 Whole Blood
+
+582 Testosterone - Free 1,000 Serum
+583 Testosterone - Total 500 Serum
+584 THALASSEMIA PROFILE 1500 EDTA,Serum
+585 Throat Swab Routine 500 Throat Swab
+586 Thyroglobulin 2445 Serum
+587 Thyroid Profile 3 (5 Tests) 1,500 Serum
+588 Thyroid profile test - TFT (t3,t4,tsh) 800 Serum
+589 Thyroid Stimulating Hormone (TSH) 300 Serum
+
+Thyroid Stimulating Hormone (TSH) Ultra Sensitive
+590 500 Serum
+
+591 Thyroxine - Free (FT4) 400 Serum
+592 Thyroxine - Total (TT4) 400 Serum
+593 Tissue Transglutaminase Antibody - IgA 1800 Serum
+594 TNF-alpha quantitative 14100 Serum
+
+
+
+595 TORCH 10 4,000 Serum
+596 TORCH 8 3,500 Serum
+597 Total IgE 700 Serum
+598 Total Protein,Albumin,Globulin,A/G Ratio 400 Serum
+599 Toxoplasma gondii - IgG 400 Serum
+
+Toxoplasma gondii - IgG + Toxoplasma gondii - IgM
+600 750 Serum
+
+601 Toxoplasma gondii - IgM 400 Serum
+602 Toxoplasma Gondii quantitative PCR 2200 EDTA
+603 Treponema Pallidum Antibodies(TPHA) 1800 Serum
+604 Triglycerides (TG) 150 Serum
+605 Triglycerides (TG) Urine 200 Urine
+606 TriIodothyronine Free (FT3) 400 Serum
+607 TriIodothyronine Total (TT3) 250 Serum
+608 Triple Marker 4000 Serum
+609 Troponin - I High Sensitivity 1800 Serum
+610 Troponin I (Quantitive) 1700 Serum
+611 Troponin T Qualitative 1,800 Serum
+612 Troponin T Quantitative 1,800 Serum
+613 TSH Receptor Antibody 2850 Serum
+614 TTG IGA 900 Serum
+615 Urea (Spot) 150 Urine
+616 Urea 24 hrs Urine 300 Urine
+617 Urea Serum 300 Serum
+618 Urea,BUN,Creatinine 300 Serum
+619 Uric Acid 300 Serum
+620 Uric Acid 24 hrs Urine 300 Urine
+621 Uric Acid Urine Random 300 Urine
+622 Urine C/S 1,100 Urine
+623 Urine Electrophoresis 1,500 Urine
+624 Urine for Chyle 900 Urine
+625 Urine Metanephrine 24 hrs Urine sample 6186 Urine
+626 Urine Metanephrine spot (Random Urine) 8250 Urine
+627 Urine Nor-metanephrine 24 hrs urine sample 8250 Urine
+
+Urine Nor-metanephrine spot (Random Urine sample)
+628 13500 Urine
+
+629 Urine Osmolality 750 Urine
+630 Urine oxalate- random urine 2200 Urine
+631 Urine pregnancy test (Â UPTÂ ) 200 Urine
+632 Urine Routine Manual 150 Urine
+633 Urine-Occult blood 1,000 Urine
+634 Urobilinogen (qualitative) 150 Urine
+635 Valproic Acid (Sodium Valproate) 900 Serum
+636 Varicella-Zoster Virus (VZV) Chicken PoxIgG 1,800 Serum
+637 Varicella-Zoster Virus (VZV) Chicken PoxIgM 1,800 Serum
+638 VDRL (Syphilis) Quantitative 500 Serum
+639 VDRL Rapid Floculation 200 Serum
+
+
+
+640 VDRL Rapid Qualitative 200 CSF
+641 VDRL Rapid Qualitative 200 Serum
+642 Vitamin - B12 1,600 Serum
+643 Vitamin - B12 & 25-Hydroxy Vitamin D 2,500 Serum
+644 Vitamin B9 1100 Serum
+645 Vitamin C (Ascorbic Acid) Serum 5000 Serum
+646 Vitamin C (Ascorbic Acid) Urine 5000 Urine
+647 Vitamin D2 1000 Serum
+648 VItamin E 3800 Serum
+649 Vitamin K 13500 Serum
+650 VMA-Vanillylmandelic Acid Spot & 24 hrs Urine 2,300 Urine
+651 Weil -Felix 1200 Serum
+652 Whole genome sequencing 28000 EDTA
+653 Widal Test (Slide Test) 200 Serum
+654 Widal Test (Tube Test) 350 Serum
+655 Zinc 24 hrs Urine 5640 Urine
+656 Zinc Random Urine 1800 Urine
+657 Zinc Serum 1710 Serum
+658 HCV Genotyping 23286 EDTA

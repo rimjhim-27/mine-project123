@@ -18,18 +18,18 @@ const IndividualTests: React.FC = () => {
 
   // Get unique categories and symptoms
   const categories = useMemo(() => {
-    const cats = ['All', ...Array.from(new Set(tests.map(test => test.category)))];
+    const cats = ['All', ...Array.from(new Set(individualTests.map(test => test.category)))];
     return cats;
-  }, [tests]);
+  }, [individualTests]);
 
   const symptoms = useMemo(() => {
-    const symp = ['All', ...Array.from(new Set(tests.flatMap(test => test.symptoms)))];
+    const symp = ['All', ...Array.from(new Set(individualTests.flatMap(test => test.symptoms)))];
     return symp;
-  }, [tests]);
+  }, [individualTests]);
 
   // Filter tests based on search and filters
   const filteredTests = useMemo(() => {
-    return tests.filter(test => {
+    return individualTests.filter(test => {
       const matchesSearch = test.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            test.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || test.category === selectedCategory;
@@ -37,7 +37,7 @@ const IndividualTests: React.FC = () => {
       
       return matchesSearch && matchesCategory && matchesSymptom;
     });
-  }, [tests, searchTerm, selectedCategory, selectedSymptom]);
+  }, [individualTests, searchTerm, selectedCategory, selectedSymptom]);
 
   const handleBookTest = (test: any) => {
     setSelectedTest({
@@ -49,7 +49,7 @@ const IndividualTests: React.FC = () => {
     setIsBookingModalOpen(true);
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section id="tests" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,7 +145,7 @@ const IndividualTests: React.FC = () => {
 
             {/* Results Count */}
             <div className="mt-4 text-sm text-gray-600">
-              Showing {filteredTests.length} of {tests.length} tests
+              Showing {filteredTests.length} of {individualTests.length} tests
             </div>
           </div>
 

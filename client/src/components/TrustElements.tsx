@@ -1,9 +1,9 @@
 import React from 'react';
 import { Star, Shield, Award, Users, Loader2 } from 'lucide-react';
-import { useTestimonials } from '../hooks/useSupabase';
+import { useTestimonials } from '../hooks/useApi';
 
 const TrustElements: React.FC = () => {
-  const { testimonials, loading, error } = useTestimonials();
+  const { testimonials, isLoading, error } = useTestimonials();
 
   const certifications = [
     {
@@ -105,7 +105,7 @@ const TrustElements: React.FC = () => {
             </p>
           </div>
 
-          {loading ? (
+          {isLoading ? (
             <div className="flex items-center justify-center py-12">
               <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
               <span className="ml-2 text-lg text-secondary-600">Loading testimonials...</span>

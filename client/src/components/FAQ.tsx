@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp, Search, Loader2, Phone, Mail, MessageCircle } from 'lucide-react';
-import { useFAQs } from '../hooks/useSupabase';
+import { useFAQs } from '../hooks/useApi';
 
 const FAQ: React.FC = () => {
-  const { faqs, loading, error } = useFAQs();
+  const { faqs, isLoading, error } = useFAQs();
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,7 +45,7 @@ const FAQ: React.FC = () => {
     window.open(`https://wa.me/919693631158?text=${message}`, '_blank');
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

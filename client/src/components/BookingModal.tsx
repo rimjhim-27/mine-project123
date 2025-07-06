@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, User, Phone, Mail, MapPin, CreditCard } from 'lucide-react';
 import { useAuth } from './auth/AuthProvider';
-import { useBookings } from '../hooks/useSupabase';
+import { useBookings } from '../hooks/useApi';
 import PaymentModal from './PaymentModal';
 import { TestBookingData } from '../services/stripe';
 
