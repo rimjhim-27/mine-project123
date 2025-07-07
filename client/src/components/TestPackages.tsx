@@ -64,10 +64,10 @@ const TestPackages: React.FC = () => {
 
   return (
     <>
-      <section id="packages" className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50 relative">
+      <section id="packages" className="py-20 gradient-hero bg-grid-pattern relative">
         {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-radial from-medical-200/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-radial from-primary-200/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}

@@ -60,36 +60,36 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <section id="home" className="pt-20 bg-gradient-to-br from-primary-50 via-medical-50 to-secondary-50 relative overflow-hidden">
+      <section id="home" className="pt-20 gradient-hero bg-grid-pattern relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-100/20 via-transparent to-medical-100/20"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary-200/30 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-medical-200/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-emerald-100/20"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="animate-slide-up">
               {/* Trust Badge */}
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="flex items-center space-x-1 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+              <div className="flex items-center space-x-3 mb-6 animate-fade-in">
+                <div className="flex items-center space-x-1 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg hover-lift">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-accent-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
-                  <span className="text-secondary-700 font-semibold ml-2">4.9/5</span>
+                  <span className="text-gray-700 font-semibold ml-2">4.9/5</span>
                 </div>
-                <div className="flex items-center space-x-2 bg-success-100 px-4 py-2 rounded-full">
-                  <Users className="w-4 h-4 text-success-600" />
-                  <span className="text-success-700 font-semibold text-sm">50,000+ Patients</span>
+                <div className="flex items-center space-x-2 bg-emerald-100 px-4 py-2 rounded-full hover-lift">
+                  <Users className="w-4 h-4 text-emerald-600" />
+                  <span className="text-emerald-700 font-semibold text-sm">50,000+ Patients</span>
                 </div>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-secondary-900 mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-slide-up">
                 Professional
-                <span className="bg-gradient-to-r from-primary-600 to-medical-600 bg-clip-text text-transparent block">
+                <span className="gradient-text block">
                   Lab Testing
                 </span>
-                <span className="text-4xl lg:text-5xl text-secondary-700">at Your Doorstep</span>
+                <span className="text-4xl lg:text-5xl text-gray-700">at Your Doorstep</span>
               </h1>
               
               <p className="text-xl text-secondary-600 mb-8 leading-relaxed max-w-xl">
@@ -99,42 +99,42 @@ const Hero: React.FC = () => {
 
               {/* Key Features */}
               <div className="grid sm:grid-cols-3 gap-6 mb-10">
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg card-hover animate-bounce-in">
+                  <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mb-4">
                     <Home className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="font-bold text-secondary-900 mb-2">Home Collection</h3>
-                  <p className="text-sm text-secondary-600">Free for orders ₹500+</p>
+                  <h3 className="font-bold text-gray-900 mb-2">Home Collection</h3>
+                  <p className="text-sm text-gray-600">Free for orders ₹500+</p>
                 </div>
                 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-medical-500 to-medical-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg card-hover animate-bounce-in" style={{animationDelay: '0.2s'}}>
+                  <div className="w-14 h-14 gradient-secondary rounded-xl flex items-center justify-center mb-4">
                     <Clock className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="font-bold text-secondary-900 mb-2">Fast Reports</h3>
-                  <p className="text-sm text-secondary-600">Within 6-24 hours</p>
+                  <h3 className="font-bold text-gray-900 mb-2">Fast Reports</h3>
+                  <p className="text-sm text-gray-600">Within 6-24 hours</p>
                 </div>
                 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-success-500 to-success-600 rounded-xl flex items-center justify-center mb-4">
-                    <Shield className="w-7 h-7 text-white" />
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg card-hover animate-bounce-in" style={{animationDelay: '0.4s'}}>
+                  <div className="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mb-4">
+                    <Shield className="w-7 h-7 text-white animate-heartbeat" />
                   </div>
-                  <h3 className="font-bold text-secondary-900 mb-2">NABL Certified</h3>
-                  <p className="text-sm text-secondary-600">99.9% Accuracy</p>
+                  <h3 className="font-bold text-gray-900 mb-2">NABL Certified</h3>
+                  <p className="text-sm text-gray-600">99.9% Accuracy</p>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-up" style={{animationDelay: '0.6s'}}>
                 <button 
                   onClick={handleBookTest}
-                  className="px-8 py-4 bg-gradient-to-r from-primary-600 to-medical-600 text-white text-lg font-bold rounded-xl hover:from-primary-700 hover:to-medical-700 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                  className="btn-primary hover-glow animate-pulse-primary"
                 >
                   Book a Test Now
                 </button>
                 <button 
                   onClick={scrollToPackages}
-                  className="px-8 py-4 bg-white/90 backdrop-blur-sm border-2 border-primary-600 text-primary-600 text-lg font-bold rounded-xl hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 bg-white/90 backdrop-blur-sm border-2 border-blue-600 text-blue-600 text-lg font-bold rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg hover-lift"
                 >
                   View Test Packages
                 </button>
