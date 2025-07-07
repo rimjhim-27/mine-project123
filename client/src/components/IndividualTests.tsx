@@ -180,9 +180,7 @@ const IndividualTests: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
                     <Home className="w-4 h-4 text-secondary-500" />
-                    <span className="text-gray-700">
-                      {test.home_collection ? 'Home collection available' : 'Lab visit required'}
-                    </span>
+                    <span className="text-gray-700">Home collection available</span>
                   </div>
                   {test.preparation_required && (
                     <div className="flex items-center space-x-2 text-sm">
