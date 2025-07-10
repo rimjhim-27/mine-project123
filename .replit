@@ -2,6 +2,9 @@ modules = ["nodejs-20", "web", "postgresql-16", "python-3.11"]
 run = "npm run dev"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
+[env]
+DATABASE_URL = "postgresql://username:password@localhost:5432/database_name"
+
 [nix]
 channel = "stable-24_05"
 packages = ["poppler_utils", "tesseract"]
