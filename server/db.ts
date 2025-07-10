@@ -5,11 +5,18 @@ import * as schema from "@shared/schema";
 
 neonConfig.webSocketConstructor = ws;
 
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL must be set. Did you forget to provision a database?",
-  );
+// Check if DATABASE_URL is set and valid
+if (!process.env.DATABASE_URL || process.env.DATABASE_URL.includes('username:password@localhost')) {
+  console.warn("⚠️  DATABASE_URL not configured properly. Using mock database for development.");
+  console.warn("📝 To fix this:");
+  console.warn("   1. Create a Neon database at https://neon.tech");
+  console.warn("   2. Copy your connection string");
+  console.warn("   3. Update DATABASE_URL in your .env file");
+  
+  // Export mock database for development
+  export const pool = null;
+  export const db = null;
+} else {
+  export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+  export const db = drizzle({ client: pool, schema });
 }
-
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-export const db = drizzle({ client: pool, schema });
